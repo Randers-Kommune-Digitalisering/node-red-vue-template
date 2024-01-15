@@ -1,0 +1,9 @@
+/* Randers design */ 
+.randers-logo {
+    background-image: url('https://www.randers.dk/static/logo.svg');
+    background-position: 5px 5px;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 50px;
+}
