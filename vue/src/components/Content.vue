@@ -19,18 +19,20 @@
 .content
 {
     background-color: rgb(253, 253, 253);
+
     border-left: 1px solid rgb(235, 235, 235);
     border-right: 1px solid rgb(235, 235, 235);
-    padding: 15px;
+
+    padding: 25px 35px;
 }
-@media screen and (min-width: 800px)
+@media screen and (min-width: 850px)
 {
     .content
     {
-        width: 800px;
+        width: 850px;
     }
 }
-@media screen and (max-width: 800px)
+@media screen and (max-width: 850px)
 {
     .content
     {
