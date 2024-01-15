@@ -36,12 +36,14 @@ fetch('/api/status')
 </template>
 
 <style scoped>
-.wrapper {
+.wrapper
+{
     display: flex;
     flex-wrap: wrap;
     padding-top: 5px;
 }
-.wrapper > * {
+.wrapper > *
+{
     gap: 20px;
 }
 

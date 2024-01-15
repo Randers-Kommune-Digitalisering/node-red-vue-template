@@ -18,7 +18,7 @@
 
 .content
 {
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(248, 250, 253);
 
     border-left: 1px solid rgb(235, 235, 235);
     border-right: 1px solid rgb(235, 235, 235);

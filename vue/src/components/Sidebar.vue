@@ -12,9 +12,8 @@
 </template>
 
 <style scoped>
-.sidebar {
-    background-color: rgb(250, 250, 250);
-
+.sidebar
+{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -22,7 +21,8 @@
     padding-top: 25px;
 }
 
-.sidebar a {
+.sidebar a
+{
     padding-right: 15px;
     border-right: 4px solid #ffffff00;
     line-height: 35px;
