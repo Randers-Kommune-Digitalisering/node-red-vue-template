@@ -37,8 +37,8 @@ Nedenstående relaterer sig til et nyt Node-RED + Vue projekt der er baseret på
 
 5. Kør følgende kommandoer for at starte lokal server:
 > cd vue
-> npm install
-> npm run dev
+npm install
+npm run dev
 
 
 Ved byg af Node-RED kopieres følgende filer ind i containeren:
