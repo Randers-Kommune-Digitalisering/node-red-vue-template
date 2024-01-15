@@ -19,6 +19,8 @@
 .content
 {
     background-color: rgb(253, 253, 253);
+    border-left: 1px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(235, 235, 235);
     padding: 15px;
 }
 @media screen and (min-width: 800px)
