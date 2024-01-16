@@ -41,10 +41,9 @@ fetch('/api/status')
     display: flex;
     flex-wrap: wrap;
     padding-top: 5px;
-}
-.wrapper > *
-{
-    gap: 20px;
+    gap: 50px;
+
+    margin-top: 20px;
 }
 
 </style>
