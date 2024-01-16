@@ -6,10 +6,6 @@ import Content from './components/Content.vue'
 
 <template>
 
-  <header>
-    <!--Header /-->
-  </header>
-
   <main>
     <Sidebar />
     <Content />

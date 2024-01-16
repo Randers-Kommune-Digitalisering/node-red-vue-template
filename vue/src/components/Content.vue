@@ -9,6 +9,7 @@
 
         <h2>Main content</h2>
         <TheWelcome />
+        <TheWelcome />
 
     </div>
 

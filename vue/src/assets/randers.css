@@ -1,7 +1,7 @@
 /* Randers design */ 
 .randers-logo {
     background-image: url('https://www.randers.dk/static/logo.svg');
-    filter: invert(46%) sepia(66%) saturate(3273%) hue-rotate(245deg) brightness(50%) contrast(83%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(9%) saturate(7487%) hue-rotate(200deg) brightness(94%) contrast(95%);
 
     background-position: 15px 5px;
     background-size: 85%;
@@ -9,4 +9,10 @@
 
     width: 200px;
     height: 45px;
+}
+
+/* Randers farver */
+a
+{
+    color: #2f469c; /* Mørkere: #243576 */
 }

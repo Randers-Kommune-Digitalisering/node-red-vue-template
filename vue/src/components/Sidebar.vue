@@ -19,6 +19,10 @@
     align-items: flex-end;
 
     padding-top: 25px;
+
+    position: fixed;
+    right: 50%;
+    transform: translateX(-425px);
 }
 
 .sidebar a
@@ -31,10 +35,9 @@
         margin-top: 25px;
     }
     .sidebar a:hover {
-        border-right: 4px solid #ad85c6;
+        border-right: 4px solid #6f7eb4;
     }
     .sidebar a.selected {
-        border-right: 4px solid #9b4dca!important;
-        border-right: 4px solid #6c2f92!important;
+        border-right: 4px solid #243576!important;
     }
 </style>
