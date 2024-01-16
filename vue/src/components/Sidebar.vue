@@ -1,11 +1,24 @@
+<script setup>
+    const menuItems = [
+        {
+            "title": "Start",
+            "url": "start",
+            "selected": true
+        },
+        {
+            "title": "Hjælp",
+            "url": "help"
+        }
+    ]
+</script>
+
 <template>
 
     <div class="sidebar">
 
         <div class="randers-logo"></div>
         
-        <a href="/" class="selected" >Start</a>
-        <a href="/">Hjælp</a>
+        <a v-for="item in menuItems" :href="item.url" :class="item.selected ? 'selected' : ''">{{item.title}}</a>
 
     </div>
 
@@ -23,21 +36,22 @@
     position: fixed;
     right: 50%;
     transform: translateX(-425px);
-}
+    }
+    .sidebar a
+    {
+        padding-right: 15px;
+        border-right: 4px solid #ffffff00;
+        line-height: 35px;
 
-.sidebar a
-{
-    padding-right: 15px;
-    border-right: 4px solid #ffffff00;
-    line-height: 35px;
-}
-    .sidebar a:first-of-type {
-        margin-top: 25px;
+        font-family: Inter;
     }
-    .sidebar a:hover {
-        border-right: 4px solid #6f7eb4;
-    }
-    .sidebar a.selected {
-        border-right: 4px solid #243576!important;
-    }
+        .sidebar a:first-of-type {
+            margin-top: 25px;
+        }
+        .sidebar a:hover {
+            border-right: 4px solid #6f7eb4;
+        }
+        .sidebar a.selected {
+            border-right: 4px solid #243576!important;
+        }
 </style>

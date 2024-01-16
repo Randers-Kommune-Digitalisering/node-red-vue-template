@@ -1,8 +1,9 @@
 /* Import */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");  /* Google Font: Roboto */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");        /* Normalize for CSS reset */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");        /* Milligram CSS template */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic");    /* Google Font: Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400");                                     /* Google Font: Inter */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");                        /* Normalize for CSS reset */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");                        /* Milligram CSS template */
 
 @import './randers.css';    /* Custom Randers CSS */
 
@@ -10,14 +11,24 @@
 
 body
 {
-    background-color: rgb(234, 243, 247);
+    background-color: #f4f5f6;
     height: 100vh;
 }
+
 main
 {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+}
+
+a
+{
+    font-weight: 400;
+}
+
+h2 {
+    border-bottom: 1px solid rgb(235, 235, 235);
 }
 
 h3 {

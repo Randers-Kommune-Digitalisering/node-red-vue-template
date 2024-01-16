@@ -5,18 +5,16 @@
 
 <template>
 
-    <div class="content">
+<div class="content">
 
-        <h2>Main content</h2>
-        <TheWelcome />
-        <TheWelcome />
+    <h2>Randers template</h2>
+    <TheWelcome />
 
-    </div>
+</div>
 
 </template>
 
 <style scoped>
-
 .content
 {
     background-color: rgb(248, 250, 253);
