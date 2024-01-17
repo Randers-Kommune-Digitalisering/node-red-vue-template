@@ -2,7 +2,7 @@
     import { ref } from 'vue'
 
     import Status from './Status.vue'
-    import TheWelcome from './TheWelcome.vue'
+    import TheWelcome from './vue-info/TheWelcome.vue'
 </script>
 
 <template>
