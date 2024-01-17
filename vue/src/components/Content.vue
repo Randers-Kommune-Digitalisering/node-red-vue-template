@@ -1,29 +1,16 @@
 <script setup>
-    import ref from 'vue'
+    import { ref } from 'vue'
 
     import Status from './Status.vue'
     import TheWelcome from './TheWelcome.vue'
-
-    const content = {
-        Status: () => import('./Status.vue'),
-        TheWelcome: () => import('./TheWelcome.vue')
-    }
-
-    const activeContent = ref({
-        contentToUse() {
-            return "TheWelcome"
-        }
-    })
-
-
 </script>
 
 <template>
 
 <div class="content">
 
-    <h2>Randers templater</h2>
-    <!-- component :is="activeContent" /-->
+    <h2>Randers template</h2>
+    <TheWelcome />
 
 </div>
 
