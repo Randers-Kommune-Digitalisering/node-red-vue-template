@@ -54,17 +54,17 @@
     position: fixed;
     right: 50%;
     transform: translateX(-425px);
-    }
+}
     .sidebar a
     {
         padding-right: 15px;
         border-right: 4px solid #ffffff00;
-        line-height: 35px;
+        line-height: 40px;
 
         font-family: Inter;
     }
         .sidebar a:first-of-type {
-            margin-top: 25px;
+            margin-top: 20px;
         }
         .sidebar a:hover {
             border-right: 4px solid #6f7eb4;

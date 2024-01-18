@@ -1,7 +1,26 @@
 <script setup>
+    import { ref } from 'vue'
+
     import Content from '@/components/Content.vue'
 
     import IconAlignLeft from '@/components/icons/IconAlignLeft.vue';
+    import IconTable from '@/components/icons/IconTable.vue';
+
+    const sampleData = ref([
+        {
+            name: "Stephen Curry",
+            age: 25,
+            height: 174,
+            location: "Los Angeles, CA"
+        },
+        {
+            name: "Klay Thompson",
+            age: 27,
+            height: 181,
+            location: "Akron, OH"
+        }
+    ])
+
 </script>
 
 <template>
@@ -18,4 +37,32 @@
         en <code>#heading</code>, og subtekst.
     </Content>
 
+    <Content>
+        <template #icon>
+            <IconTable />
+        </template>
+        <template #heading>Dynamisk tabel</template>
+        
+        <table>
+
+            <thead>
+                <tr>
+                    <th v-for="key in Object.keys(sampleData[0])" class="cap">{{key}}</th>
+                </tr>
+            </thead>
+
+            <tr v-for="obj in sampleData">
+                <td v-for="key in Object.keys(sampleData[0])">{{obj[key]}}</td>
+            </tr>
+
+        </table>
+    </Content>
+
 </template>
+
+<style scoped>
+    .cap
+    {
+        text-transform: capitalize;
+    }
+</style>
