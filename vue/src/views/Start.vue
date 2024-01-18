@@ -3,6 +3,7 @@
     import Status from '@/components/Status.vue'
 
     import IconOK from '@/components/icons/IconOK.vue'
+    import IconRSS from '@/components/icons/IconRSS.vue'
 </script>
 
 <template>
@@ -14,7 +15,16 @@
         </template>
         <template #heading>Sådan, det ser ud til at køre!</template>
         
-        Du har nu succesfuldt startet et nyt projekt med Randers Kommune's Node-RED + Vue template.
+        Du har nu succesfuldt startet et nyt projekt med <a href="https://github.com/Randers-Kommune-Digitalisering/node-red-vue-template" target="_blank" rel="noopener">Randers Kommune's Node-RED + Vue template</a>.
+    </Content>
+
+    <Content>
+        <template #icon>
+            <IconRSS />
+        </template>
+        <template #heading>Status på opsætning</template>
+        
+        <Status />
     </Content>
 
 </template>

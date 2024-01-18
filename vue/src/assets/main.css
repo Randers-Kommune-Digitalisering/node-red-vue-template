@@ -13,6 +13,7 @@ body
 {
     background-color: #faf9f8; /* Brighter: #fafafa; Old: #f4f5f6; */
     height: 100vh;
+    color: #4a535a;
 }
 
 main
@@ -27,13 +28,12 @@ a
     font-weight: 400;
 }
 
-
 h2 {
     border-bottom: 1px solid #e1e1e1; /* Old: rgb(235, 235, 235); */
-    color:rgb(84, 93, 100);
+    color:#3c4349;
 }
 
-h2:not(:first-of-type)
+h2:not(:first-of-type), h3:not(:first-of-type), h4:not(:first-of-type), h5:not(:first-of-type), h6:not(:first-of-type)
 {
     padding-top: 20px;
 }
@@ -44,4 +44,19 @@ h3 {
 
 h2 ~ h3:first-of-type {
     padding-top: 0px!important;
+}
+
+/* Custom classes */
+
+.fw-400 
+{
+    font-weight: 400;
+}
+.fc-red
+{
+    color: rgb(109, 46, 46);
+}
+.fc-green
+{
+    color: rgb(46, 109, 77);
 }
