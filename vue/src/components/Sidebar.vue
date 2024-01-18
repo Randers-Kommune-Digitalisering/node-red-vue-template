@@ -18,7 +18,7 @@
 
         <div class="randers-logo"></div>
         
-        <a v-for="item in menuItems" :href="item.url" :class="item.selected ? 'selected' : ''">{{item.title}}</a>
+        <a v-for="item in menuItems" :href="item.url" :class="item.selected ? 'selected' : ''"><router-link :to="item.url">{{item.title}}</router-link></a>
 
     </div>
 
