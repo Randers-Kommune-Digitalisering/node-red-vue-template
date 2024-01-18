@@ -1,7 +1,7 @@
 <script setup>
 import Header from './components/Header.vue'
 import Sidebar from './components/Sidebar.vue'
-import Content from './components/Content.vue'
+//import Content from './components/Content.vue'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import Content from './components/Content.vue'
   <main>
 
     <div class="content">
-      <Content />
+      <router-view></router-view>
     </div>
 
   </main>

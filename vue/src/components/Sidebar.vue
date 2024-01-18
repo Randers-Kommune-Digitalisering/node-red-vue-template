@@ -1,15 +1,27 @@
 <script setup>
-    const menuItems = [
+    import { ref } from 'vue'
+
+    // Opsætning af menupunkter
+
+    const menuItems = ref([
         {
             "title": "Start",
-            "url": "start",
+            "url": "/",
             "selected": true
         },
         {
-            "title": "Hjælp",
-            "url": "help"
+            "title": "Templates",
+            "url": "templates"
         }
-    ]
+    ])
+
+    // Funktion til visuelt at opdatere menu selection
+
+    function select(item)
+    {
+        menuItems.value.forEach(x => x.selected = false)
+        item.selected = true
+    }
 </script>
 
 <template>
@@ -18,7 +30,9 @@
 
         <div class="randers-logo"></div>
         
-        <a v-for="item in menuItems" :href="item.url" :class="item.selected ? 'selected' : ''"><router-link :to="item.url">{{item.title}}</router-link></a>
+        <router-link v-for="item in menuItems" :to="item.url" :class="item.selected ? 'selected' : ''" @click="select(item)">
+            <span>{{item.title}}</span>
+        </router-link>
 
     </div>
 
