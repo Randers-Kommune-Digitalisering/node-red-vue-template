@@ -1,13 +1,11 @@
 <script setup>
-import Header from './components/Header.vue'
-import Sidebar from './components/Sidebar.vue'
-//import Content from './components/Content.vue'
+import Sidemenu from './components/Menu.vue'
 </script>
 
 <template>
 
   <header>
-    <Sidebar />
+    <Sidemenu />
   </header>
   
   <main>
@@ -24,10 +22,10 @@ import Sidebar from './components/Sidebar.vue'
 <style scoped>
 .content
 {
-    background-color: rgb(248, 250, 253);
+    background-color: #fbfbfb; /* Old: rgb(248, 250, 253); */
 
-    border-left: 1px solid rgb(235, 235, 235);
-    border-right: 1px solid rgb(235, 235, 235);
+    border-left: 1px solid #e1e1e1; /* Old: rgb(235, 235, 235); */
+    border-right: 1px solid #e1e1e1; /* Old: rgb(235, 235, 235); */
 
     padding: 25px 35px;
 }

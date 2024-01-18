@@ -10,7 +10,11 @@
             "selected": true
         },
         {
-            "title": "Templates",
+            "title": "Vue Info",
+            "url": "/vue"
+        },
+        {
+            "title": "UI Templates",
             "url": "templates"
         }
     ])

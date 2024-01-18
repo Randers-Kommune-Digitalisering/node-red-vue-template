@@ -1,4 +1,4 @@
 <template>
-    <h2>Randers Kommune frontend template</h2>
+    <h2>User-Interface Templates</h2>
     Ny tekst
 </template>
