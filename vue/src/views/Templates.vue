@@ -21,6 +21,11 @@
         }
     ])
 
+    function clickItem(obj)
+    {
+        console.log("Clicked item: " + sampleData.value.findIndex(x => x == obj))
+    }
+
 </script>
 
 <template>
@@ -48,14 +53,24 @@
             <thead>
                 <tr>
                     <th v-for="key in Object.keys(sampleData[0])" class="cap">{{key}}</th>
+                    <th></th>
                 </tr>
             </thead>
 
             <tr v-for="obj in sampleData">
                 <td v-for="key in Object.keys(sampleData[0])">{{obj[key]}}</td>
+                <td><button @click="clickItem(obj)">Se mere</button></td>
             </tr>
 
         </table>
+
+    </Content>
+
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Kort</template>
     </Content>
 
 </template>

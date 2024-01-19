@@ -43,4 +43,11 @@ import Sidemenu from './components/Menu.vue'
         width: 100vw;
     }
 }
+@media screen and (max-width: 1200px)
+{
+  /* Add padding for header */
+  main {
+    padding-top: 60px;
+  }
+}
 </style>
