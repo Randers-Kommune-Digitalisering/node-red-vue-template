@@ -28,9 +28,12 @@
     }
 
     const newDataSample = ref({})
+    const selectedData = ref({})
 
     function clickItem(obj)
     {
+        selectedData.value = obj
+        console.log(selectedData.value)
         console.log("Clicked item: " + sampleData.value.findIndex(x => x == obj))
     }
 
@@ -80,8 +83,17 @@
         <template #heading>Kort</template>
 
         <div class="card">
-            <div class="card-header">Titel</div>
-            <div class="card-body">Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.</div>
+            <div class="card-header">
+                <span v-if="selectedData['name'] == null">Overskrift</span>
+                <span v-else>{{selectedData['name']}}</span>
+            </div>
+            <div class="card-body">
+                <div v-for="key in Object.keys(selectedData)" class="cap lastDivPad">
+                    <span class="fw-400">{{key}}</span>:
+                    {{selectedData[key]}}
+                </div>
+                Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
+            </div>
         </div>
     </Content>
 
@@ -96,7 +108,7 @@
             <fieldset>
                 <div v-for="key in Object.keys(sampleData[0])">
                     <label :for="key" class="cap">{{key}}</label>
-                    <input type="text" placeholder="..." :id="key" v-model="newDataSample[key]">
+                    <input type="text" placeholder="..." :id="key" v-model="newDataSample[key]" required>
                 </div>
 
                 <input class="button-primary" type="submit" value="Tilføj">
@@ -112,5 +124,9 @@
     .cap
     {
         text-transform: capitalize;
+    }
+    .lastDivPad:last-of-type
+    {
+        padding-bottom: 10px;
     }
 </style>

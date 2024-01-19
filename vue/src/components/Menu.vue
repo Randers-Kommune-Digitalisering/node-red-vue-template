@@ -98,7 +98,7 @@
         transform: translateX(0px);
         left: 0px;
 
-        background-color: #faf9f8;
+        background-color: var(--main-color-bg);
         border-bottom: 1px solid var(--main-color-border);
 
         overflow-x: auto;

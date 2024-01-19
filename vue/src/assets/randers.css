@@ -14,11 +14,13 @@
 
 /* Randers farver */
 
-:root {
+:root
+{
     --main-color-bg: #faf9f8;
     --main-color-bg-light: #fbfbfb;
 
     --main-color-text: #4a535a;
+    --main-color-text-dark: #3c4349;
 
     --main-color: #2f469c;
     --main-color-dark: #243576;
@@ -26,7 +28,7 @@
 
     --main-color-border: #e1e1e1;
     --main-color-border-dark: #d1d1d1;
-  }
+}
 
 a
 {
@@ -43,7 +45,7 @@ a
 
 button, input[type='submit']
 {
-    background-color: var(--main-color); 
+    background-color: var(--main-color);
 }
     button:focus, input[type='submit']:focus
     {
@@ -53,3 +55,8 @@ button, input[type='submit']
     {
         background-color: var(--main-color-light);
     }
+
+input:not([type='submit']):focus
+{
+    border-color: var(--main-color);
+}

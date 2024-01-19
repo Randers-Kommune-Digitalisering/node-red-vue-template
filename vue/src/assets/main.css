@@ -8,6 +8,7 @@
 @import './randers.css';    /* Custom Randers CSS */
 
 /* Base CSS */
+
 body
 {
     background-color: var(--main-color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
@@ -33,7 +34,7 @@ a
 
 h2 {
     border-bottom: 1px solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
-    color:#3c4349;
+    color:var(--main-color-text-dark);
 }
 
 h2:not(:first-of-type), h3:not(:first-of-type), h4:not(:first-of-type), h5:not(:first-of-type), h6:not(:first-of-type)
@@ -74,19 +75,21 @@ th, label
 .card
 {
     border-radius: 5px;
-    border: 1px solid var(--main-color-border-dark); 
-}
+    border: 1px solid var(--main-color-border-dark);
 
+    margin-bottom: 20px;
+}
     .card > .card-header
     {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         border-bottom: 1px solid var(--main-color-border); 
-        background-color: #faf9f8;
+        background-color: var(--main-color-bg);
 
         font-weight: 500;
-        padding: 5px 12px;
+        padding: 10px 12px;
     }
-    .card > .card-body {
-        padding: 5px 12px;
+    .card > .card-body
+    {
+        padding: 15px 12px;
     }
