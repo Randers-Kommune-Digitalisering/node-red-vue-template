@@ -6,18 +6,22 @@
     const menuItems = ref([
         {
             "title": "Start",
-            "url": "/",
-            "selected": true
+            "url": "/"
         },
         {
             "title": "UI Templates",
-            "url": "templates"
+            "url": "/templates"
         },
         {
             "title": "Vue Info",
             "url": "/vue"
         }
     ])
+
+    // Sæt selected = true landing page
+
+    menuItems.value[ menuItems.value.findIndex(x => x.url == new URL(location.href).pathname) ].selected = true
+
 
     // Funktion til visuelt at opdatere menu selection
 
@@ -75,7 +79,7 @@
             border-right: 4px solid #243576!important;
         }
 
-/* Move menu to become header */
+/* Responsive design - menu flyttes til header */
 @media screen and (max-width: 1200px)
 {
     .randers-logo
@@ -120,7 +124,7 @@
         }
 }
 
-/* Hide logo on very small screens */
+/* Logo skjules på meget små skærme */
 @media screen and (max-width: 800px)
 {
     .randers-logo
