@@ -16,33 +16,26 @@ fetch('/api/status')
 </script>
 
 <template>
-
-    <div class="wrapper">
-
-        <div>
-            <h2>Express:</h2>
-            <h3 v-if="statusExpress">{{statusExpress}}</h3>
-            <h3 v-else="statusExpress">Not running</h3>
-        </div>
-        
-        <div>
-            <h2>Node-RED:</h2>
-            <h3 v-if="statusNodered">{{statusNodered}}</h3>
-            <h3 v-else="statusNodered">Not connected</h3>
-        </div>
-        
+    Herunder kan du se om din Node-RED backend kører, og hvorvidt du bruger Express server. Vær opmærksom på at Express serveren ikke kører hvis du bruger Vite i udviklingsmiljø.
+    
+    <div>
+        <span>Node-RED</span>:
+        <span v-if="statusNodered" class="fc-green fw-400">{{statusNodered}}</span>
+        <span v-else="statusNodered" class="fc-red fw-400">Not connected</span>
     </div>
 
+    <div>
+        <span>Express</span>:
+        <span v-if="statusExpress" class="fc-green fw-400">{{statusExpress}}</span>
+        <span v-else="statusExpress" class="fc-red fw-400">Not running</span>
+    </div>
 </template>
 
 <style scoped>
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 5px;
-}
-.wrapper > * {
-    gap: 20px;
-}
-
+    div
+    {
+        margin-top: 10px;
+        padding-left: 15px;
+        border-left: 1px solid var(--main-color-border);
+    }
 </style>

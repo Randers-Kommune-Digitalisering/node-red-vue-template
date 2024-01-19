@@ -1,35 +1,95 @@
-@import './base.css';
+/* Import */
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic");    /* Google Font: Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400");                                     /* Google Font: Inter */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");                        /* Normalize for CSS reset */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");                        /* Milligram CSS template */
 
-  font-weight: normal;
+@import './randers.css';    /* Custom Randers CSS */
+
+/* Base CSS */
+
+body
+{
+    background-color: var(--main-color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
+    color: var(--main-color-text);
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+html
+{
+    overflow-y: scroll;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
+main
+{
     display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+    justify-content: center;
+    min-height: 100vh;
 }
+
+a
+{
+    font-weight: 400;
+}
+
+h2 {
+    border-bottom: 1px solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
+    color:var(--main-color-text-dark);
+}
+
+h2:not(:first-of-type), h3:not(:first-of-type), h4:not(:first-of-type), h5:not(:first-of-type), h6:not(:first-of-type)
+{
+    padding-top: 20px;
+}
+
+h3 {
+    padding-top: 20px;
+}
+
+h2 ~ h3:first-of-type {
+    padding-top: 0px!important;
+}
+
+th, label
+{
+    font-weight: 500;
+}
+
+/* Custom classes */
+
+.fw-400 
+{
+    font-weight: 400;
+}
+.fc-red
+{
+    color: rgb(109, 46, 46);
+}
+.fc-green
+{
+    color: rgb(46, 109, 77);
+}
+
+/* Custom components */
+
+.card
+{
+    border-radius: 5px;
+    border: 1px solid var(--main-color-border-dark);
+
+    margin-bottom: 20px;
+}
+    .card > .card-header
+    {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom: 1px solid var(--main-color-border); 
+        background-color: var(--main-color-bg);
+
+        font-weight: 500;
+        padding: 10px 12px;
+    }
+    .card > .card-body
+    {
+        padding: 15px 12px;
+    }
