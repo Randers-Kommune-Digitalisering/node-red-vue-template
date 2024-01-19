@@ -73,10 +73,10 @@
             margin-top: 20px;
         }
         .sidebar a:hover {
-            border-right: 4px solid #6f7eb4;
+            border-right: 4px solid var(--main-color-light);
         }
         .sidebar a.selected {
-            border-right: 4px solid #243576!important;
+            border-right: 4px solid var(--main-color-dark)!important;
         }
 
 /* Responsive design - menu flyttes til header */
@@ -99,7 +99,7 @@
         left: 0px;
 
         background-color: #faf9f8;
-        border-bottom: 1px solid #e1e1e1;
+        border-bottom: 1px solid var(--main-color-border);
 
         overflow-x: auto;
     }
@@ -115,11 +115,11 @@
             margin-top: 0px!important;
         }
         .sidebar a:hover {
-            border-bottom: 4px solid #6f7eb4;
+            border-bottom: 4px solid var(--main-color-light);
             border-right: 0px!important;
         }
         .sidebar a.selected {
-            border-bottom: 4px solid #243576!important;
+            border-bottom: 4px solid var(--main-color-dark)!important;
             border-right: 0px!important;
         }
 }

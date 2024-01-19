@@ -22,10 +22,10 @@ import Sidemenu from './components/Menu.vue'
 <style scoped>
 .content
 {
-    background-color: #fbfbfb; /* Old: rgb(248, 250, 253); */
+    background-color: var(--main-color-bg-light); /* Old: rgb(248, 250, 253); */
 
-    border-left: 1px solid #e1e1e1; /* Old: rgb(235, 235, 235); */
-    border-right: 1px solid #e1e1e1; /* Old: rgb(235, 235, 235); */
+    border-left: 1px solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
+    border-right: 1px solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
 
     padding: 25px 35px;
 }
@@ -41,6 +41,8 @@ import Sidemenu from './components/Menu.vue'
     .content
     {
         width: 100vw;
+        border-left: 0px;
+        border-right: 0px;
     }
 }
 @media screen and (max-width: 1200px)

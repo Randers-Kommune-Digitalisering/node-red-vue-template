@@ -10,9 +10,13 @@
 /* Base CSS */
 body
 {
-    background-color: #faf9f8; /* Brighter: #fafafa; Old: #f4f5f6; */
-    height: 100vh;
-    color: #4a535a;
+    background-color: var(--main-color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
+    color: var(--main-color-text);
+}
+
+html
+{
+    overflow-y: scroll;
 }
 
 main
@@ -28,7 +32,7 @@ a
 }
 
 h2 {
-    border-bottom: 1px solid #e1e1e1; /* Old: rgb(235, 235, 235); */
+    border-bottom: 1px solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
     color:#3c4349;
 }
 
@@ -45,6 +49,11 @@ h2 ~ h3:first-of-type {
     padding-top: 0px!important;
 }
 
+th, label
+{
+    font-weight: 500;
+}
+
 /* Custom classes */
 
 .fw-400 
@@ -59,3 +68,25 @@ h2 ~ h3:first-of-type {
 {
     color: rgb(46, 109, 77);
 }
+
+/* Custom components */
+
+.card
+{
+    border-radius: 5px;
+    border: 1px solid var(--main-color-border-dark); 
+}
+
+    .card > .card-header
+    {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom: 1px solid var(--main-color-border); 
+        background-color: #faf9f8;
+
+        font-weight: 500;
+        padding: 5px 12px;
+    }
+    .card > .card-body {
+        padding: 5px 12px;
+    }

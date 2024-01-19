@@ -36,6 +36,6 @@ fetch('/api/status')
     {
         margin-top: 10px;
         padding-left: 15px;
-        border-left: 1px solid #e1e1e1;
+        border-left: 1px solid var(--main-color-border);
     }
 </style>

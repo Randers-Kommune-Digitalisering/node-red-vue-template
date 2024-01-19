@@ -14,28 +14,42 @@
 
 /* Randers farver */
 
+:root {
+    --main-color-bg: #faf9f8;
+    --main-color-bg-light: #fbfbfb;
+
+    --main-color-text: #4a535a;
+
+    --main-color: #2f469c;
+    --main-color-dark: #243576;
+    --main-color-light: #6f7eb4;
+
+    --main-color-border: #e1e1e1;
+    --main-color-border-dark: #d1d1d1;
+  }
+
 a
 {
-    color: #2f469c; /* Mørkere: #243576 */
+    color: var(--main-color); 
 }
     a:focus
     {
-        color: #2f469c;
+        color: var(--main-color);
     }
     a:hover
     {
-        color: #6f7eb4;
+        color: var(--main-color-light);
     }
 
 button, input[type='submit']
 {
-    background-color: #2f469c; /* Mørkere: #243576 */
+    background-color: var(--main-color); 
 }
     button:focus, input[type='submit']:focus
     {
-        background-color: #2f469c;
+        background-color: var(--main-color);
     }
     button:hover, input[type='submit']:hover
     {
-        background-color: #6f7eb4;
+        background-color: var(--main-color-light);
     }

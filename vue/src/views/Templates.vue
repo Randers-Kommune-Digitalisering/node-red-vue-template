@@ -78,6 +78,11 @@
 
         </template>
         <template #heading>Kort</template>
+
+        <div class="card">
+            <div class="card-header">Titel</div>
+            <div class="card-body">Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.</div>
+        </div>
     </Content>
 
     <!-- Formular -->
@@ -98,6 +103,8 @@
             </fieldset>
         </form>
     </Content>
+
+    <!--  -->
 
 </template>
 
