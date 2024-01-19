@@ -26,3 +26,16 @@ a
     {
         color: #6f7eb4;
     }
+
+button, input[type='submit']
+{
+    background-color: #2f469c; /* Mørkere: #243576 */
+}
+    button:focus, input[type='submit']:focus
+    {
+        background-color: #2f469c;
+    }
+    button:hover, input[type='submit']:hover
+    {
+        background-color: #6f7eb4;
+    }

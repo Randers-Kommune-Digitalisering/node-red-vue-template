@@ -21,6 +21,14 @@
         }
     ])
 
+    function addDataSample()
+    {
+        sampleData.value.push(newDataSample.value)
+        newDataSample.value = {}
+    }
+
+    const newDataSample = ref({})
+
     function clickItem(obj)
     {
         console.log("Clicked item: " + sampleData.value.findIndex(x => x == obj))
@@ -31,6 +39,7 @@
 <template>
     <h2>User-Interface Templates</h2>
     
+    <!-- Paragraffer -->
     <Content>
         <template #icon>
             <IconAlignLeft />
@@ -42,6 +51,7 @@
         en <code>#heading</code>, og subtekst.
     </Content>
 
+    <!-- Dynamisk tabel-->
     <Content>
         <template #icon>
             <IconTable />
@@ -49,28 +59,44 @@
         <template #heading>Dynamisk tabel</template>
         
         <table>
-
             <thead>
                 <tr>
                     <th v-for="key in Object.keys(sampleData[0])" class="cap">{{key}}</th>
                     <th></th>
                 </tr>
             </thead>
-
             <tr v-for="obj in sampleData">
                 <td v-for="key in Object.keys(sampleData[0])">{{obj[key]}}</td>
                 <td><button @click="clickItem(obj)">Se mere</button></td>
             </tr>
-
         </table>
-
     </Content>
 
+    <!-- Info-kort -->
     <Content>
         <template #icon>
 
         </template>
         <template #heading>Kort</template>
+    </Content>
+
+    <!-- Formular -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Dynamisk formular</template>
+
+        <form @submit.prevent="addDataSample">
+            <fieldset>
+                <div v-for="key in Object.keys(sampleData[0])">
+                    <label :for="key" class="cap">{{key}}</label>
+                    <input type="text" placeholder="..." :id="key" v-model="newDataSample[key]">
+                </div>
+
+                <input class="button-primary" type="submit" value="Tilføj">
+            </fieldset>
+        </form>
     </Content>
 
 </template>
