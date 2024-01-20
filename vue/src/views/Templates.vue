@@ -82,17 +82,19 @@
         </template>
         <template #heading>Kort</template>
 
-        <div class="card">
-            <div class="card-header">
-                <span v-if="selectedData['name'] == null">Overskrift</span>
-                <span v-else>{{selectedData['name']}}</span>
-            </div>
-            <div class="card-body">
-                <div v-for="key in Object.keys(selectedData)" class="cap lastDivPad">
-                    <span class="fw-400">{{key}}</span>:
-                    {{selectedData[key]}}
+        <div class="flexbox">
+            <div class="card">
+                <div class="card-header">
+                    <span v-if="selectedData['name'] == null">Overskrift</span>
+                    <span v-else>{{selectedData['name']}}</span>
                 </div>
-                Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
+                <div class="card-body">
+                    <div v-for="key in Object.keys(selectedData)" class="cap lastDivPad">
+                        <span class="fw-400">{{key}}</span>:
+                        {{selectedData[key]}}
+                    </div>
+                    Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
+                </div>
             </div>
         </div>
     </Content>
@@ -127,6 +129,6 @@
     }
     .lastDivPad:last-of-type
     {
-        padding-bottom: 10px;
+        padding-bottom: 1rem;
     }
 </style>

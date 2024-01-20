@@ -1,18 +1,20 @@
 <script setup>
-import Sidemenu from './components/Menu.vue'
+import Header from './components/Menu.vue'
 </script>
 
 <template>
 
   <header>
-    <Sidemenu />
+
+      <Header />
+
   </header>
   
   <main>
 
-    <div class="content">
-      <router-view></router-view>
-    </div>
+      <div class="content">
+          <router-view></router-view>
+      </div>
 
   </main>
 
@@ -20,37 +22,42 @@ import Sidemenu from './components/Menu.vue'
 
 
 <style scoped>
+/* Mobile first */
 .content
 {
+    width: 100vw;
+    border-left: 0rem;
+    border-right: 0rem;
+
     background-color: var(--main-color-bg-light);
 
-    border-left: 1px solid var(--main-color-border);
-    border-right: 1px solid var(--main-color-border);
+    padding: 2.5rem 3.5rem;
+}
 
-    padding: 25px 35px;
+main
+{
+    /* Add padding for header */
+    padding-top: 6rem;
 }
-@media screen and (min-width: 850px)
+
+/* Tablet or desktop */
+@media screen and (min-width: 53.125rem) /* 850px or 85rem using 16 px conversion */
 {
     .content
     {
-        width: 850px;
+        /* Set width of main content */
+        width: 85rem;
+
+        border-left: 0.1rem solid var(--main-color-border);
+        border-right: 0.1rem solid var(--main-color-border);
     }
 }
-@media screen and (max-width: 850px)
+@media screen and (min-width: 80rem)
 {
-    .content
+    main
     {
-        width: 100vw;
-        border-left: 0px;
-        border-right: 0px;
+        /* Remove padding for header as header becomes side menu */
+        padding-top: 0rem;
     }
-}
-@media screen and (max-width: 1200px)
-{
-  /* Add padding for header */
-  main
-  {
-    padding-top: 60px;
-  }
 }
 </style>

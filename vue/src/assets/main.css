@@ -33,21 +33,21 @@ a
 }
 
 h2 {
-    border-bottom: 1px solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
+    border-bottom: 0.1rem solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
     color:var(--main-color-text-dark);
 }
 
 h2:not(:first-of-type), h3:not(:first-of-type), h4:not(:first-of-type), h5:not(:first-of-type), h6:not(:first-of-type)
 {
-    padding-top: 20px;
+    padding-top: 2rem;
 }
 
 h3 {
-    padding-top: 20px;
+    padding-top: 2rem;
 }
 
 h2 ~ h3:first-of-type {
-    padding-top: 0px!important;
+    padding-top: 0rem!important;
 }
 
 th, label
@@ -70,26 +70,47 @@ th, label
     color: rgb(46, 109, 77);
 }
 
+.card.red
+{
+
+}
+.card.green
+{
+
+}
+.card.blue
+{
+
+}
+
 /* Custom components */
+
+.flexbox
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
 
 .card
 {
-    border-radius: 5px;
-    border: 1px solid var(--main-color-border-dark);
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--main-color-border-dark);
 
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    width: 35rem;
 }
     .card > .card-header
     {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-bottom: 1px solid var(--main-color-border); 
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom: 0.1rem solid var(--main-color-border); 
         background-color: var(--main-color-bg);
 
         font-weight: 500;
-        padding: 10px 12px;
+        padding: 1rem 1.2rem;
     }
     .card > .card-body
     {
-        padding: 15px 12px;
+        padding: 1.5rem 1.2rem;
     }

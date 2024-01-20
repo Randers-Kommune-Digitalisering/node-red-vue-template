@@ -1,7 +1,7 @@
 <script setup>
     import { ref } from 'vue'
 
-    // Opsætning af menupunkter
+    // Set menu items
 
     const menuItems = ref([
         {
@@ -18,12 +18,12 @@
         }
     ])
 
-    // Sæt selected = true landing page
+    // Set selected = true for landing page
 
     menuItems.value[ menuItems.value.findIndex(x => x.url == new URL(location.href).pathname) ].selected = true
 
 
-    // Funktion til visuelt at opdatere menu selection
+    // Function to visually update selected item
 
     function select(item)
     {
@@ -34,7 +34,7 @@
 
 <template>
 
-    <div class="sidebar">
+    <div class="header">
 
         <div class="randers-logo"></div>
         
@@ -47,89 +47,107 @@
 </template>
 
 <style scoped>
-.sidebar
+/* Mobile first */
+/* 1 rem = 10 px, except when defining @media rules, then 1 rem = 16 px */
+.randers-logo
+{
+    background-position: 2rem 0rem;
+}
+
+/* Is top header */
+.header
 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
 
-    padding-top: 25px;
+    padding-top: 0rem;
 
     position: fixed;
-    right: 50%;
-    transform: translateX(-425px);
+    width: 100vw;
+    height: 6rem;
+    transform: translateX(0rem);
+    left: 0rem;
+
+    background-color: var(--main-color-bg);
+    border-bottom: 0.1rem solid var(--main-color-border);
+
+    overflow-x: auto;
 }
-    .sidebar a
+    .header a
     {
-        padding-right: 15px;
-        border-right: 4px solid #ffffff00;
-        line-height: 40px;
+        border-bottom: 0.4rem solid #ffffff00;
+
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
 
         font-family: Inter;
-        
+        line-height: 4rem;
+
         white-space: nowrap;
     }
-        .sidebar a:first-of-type {
-            margin-top: 20px;
+        .header a:hover
+        {
+            border-bottom: 0.4rem solid var(--main-color-light);
         }
-        .sidebar a:hover {
-            border-right: 4px solid var(--main-color-light);
+        .header a.selected
+        {
+            border-bottom: 0.4rem solid var(--main-color-dark);
         }
-        .sidebar a.selected {
-            border-right: 4px solid var(--main-color-dark)!important;
-        }
-
-/* Responsive design - menu flyttes til header */
-@media screen and (max-width: 1200px)
+        
+/* Tablet or desktop */
+@media screen and (min-width: 80rem) /* 1280 px */
 {
-    .randers-logo
+    /* Is lefside header */
+    .header
     {
-        margin-left: 5px;
-        background-position: 10px 0px;
+        flex-direction: column;
+        align-items: flex-end;
+
+        padding-top: 2.5rem;
+
+        right: 50%;
+        transform: translateX(-42.5rem);
+        width: auto;
+        height: auto;
+
+        border-bottom: 0rem;
     }
-    .sidebar
-    {
-        flex-direction: row;
+        .header a
+        {
+            padding-right: 1.5rem;
 
-        padding-top: 0px;
-
-        width: 100vw;
-        height: 60px;
-        transform: translateX(0px);
-        left: 0px;
-
-        background-color: var(--main-color-bg);
-        border-bottom: 1px solid var(--main-color-border);
-
-        overflow-x: auto;
-    }
-    .sidebar a
-    {
-        border-bottom: 4px solid #ffffff00;
-        border-right: 0px;
-
-        padding-right: 12px;
-        padding-left: 12px;
-    }
-        .sidebar a {
-            margin-top: 0px!important;
+            border-bottom: 0rem;
+            border-right: 0.4rem solid #ffffff00;
         }
-        .sidebar a:hover {
-            border-bottom: 4px solid var(--main-color-light);
-            border-right: 0px!important;
-        }
-        .sidebar a.selected {
-            border-bottom: 4px solid var(--main-color-dark)!important;
-            border-right: 0px!important;
-        }
+            .header a:first-of-type
+            {
+                margin-top: 2rem;
+            }
+            .header a:hover
+            {
+                border-right: 0.4rem solid var(--main-color-light);
+                border-bottom: 0rem;
+            }
+            .header a.selected
+            {
+                border-right: 0.4rem solid var(--main-color-dark);
+                border-bottom: 0rem;
+            }
 }
 
+
 /* Logo skjules på meget små skærme */
-@media screen and (max-width: 800px)
+@media screen and (max-width: 35rem)
 {
     .randers-logo
     {
         display: none;
+    }
+    .header
+    {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 </style>

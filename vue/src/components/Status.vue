@@ -34,8 +34,8 @@ fetch('/api/status')
 <style scoped>
     div
     {
-        margin-top: 10px;
-        padding-left: 15px;
-        border-left: 1px solid var(--main-color-border);
+        margin-top: 1rem;
+        padding-left: 1.5rem;
+        border-left: 0.1rem solid var(--main-color-border);
     }
 </style>
