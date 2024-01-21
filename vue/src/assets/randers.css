@@ -19,18 +19,9 @@
 
 :root
 {
-    --color-bg: #faf9f8;
-    --color-bg-light: #fbfbfb;
-
-    --color-text: #4a535a;
-    --color-text-dark: #3c4349;
-
     --randers-color-: #2f469c;
     --randers-color-dark: #243576;
     --randers-color-light: #6f7eb4;
-
-    --color-border: #e1e1e1;
-    --color-border-dark: #d1d1d1;
 }
 
 a
@@ -58,8 +49,3 @@ button, input[type='submit']
     {
         background-color: var(--randers-color-light);
     }
-
-input:not([type='submit']):focus
-{
-    border-color: var(--randers-color-);
-}

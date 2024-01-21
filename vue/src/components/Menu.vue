@@ -10,7 +10,8 @@
         },
         {
             "title": "UI Templates",
-            "url": "/templates"
+            "url": "/templates",
+            "alert": "12"
         },
         {
             "title": "Vue Info",
@@ -39,6 +40,7 @@
         <div class="randers-logo"></div>
         
         <router-link v-for="item in menuItems" :to="item.url" :class="item.selected ? 'selected' : ''" @click="select(item)">
+            <span v-if="item.alert" class="alert">{{item.alert}}</span>
             <span>{{item.title}}</span>
         </router-link>
 
@@ -93,6 +95,19 @@
         .header a.selected
         {
             border-bottom: 0.4rem solid var(--randers-color-dark);
+        }
+        .header a .alert
+        {
+            font-size: 0.8em;
+            color: white;
+            
+            background-color: var(--randers-color-);
+            border-radius: 0.3rem;
+            
+            padding: 0.1rem 0.4rem;
+            margin-right: 0.8rem;
+            
+            line-height: normal;
         }
         
 /* Tablet or desktop */
