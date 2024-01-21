@@ -61,7 +61,7 @@ h2 {
 
 h2:not(:first-of-type), h3:not(:first-of-type), h4:not(:first-of-type), h5:not(:first-of-type), h6:not(:first-of-type)
 {
-    padding-top: 3rem;
+    margin-top: 3rem;
 }
 
 h3 > svg
@@ -206,10 +206,11 @@ input[type='range']::-moz-range-thumb
 
 .tag
 {
-    font-size: 0.9em;
-    color: white;
+    font-size: 0.95em;
+    color: var(--color-text-dark)!important;
     
-    background-color: var(--color-text);
+    border: 0.1rem solid var(--color-border-dark);
+    background-color: var(--color-bg);
     border-radius: 0.3rem;
     
     padding: 0.1rem 0.5rem;
@@ -225,40 +226,35 @@ input[type='range']::-moz-range-thumb
 
 span.red
 { color: var(--color-red); }
-.card.red
+.card.red, .tag.red
 { border-color: var(--color-red); }
-button.red, input[type='submit'].red, .tag.red
+button.red, input[type='submit'].red
 { background-color: var(--color-red); }
-.tag.red { color:white }
 
 span.green
 { color: var(--color-green); }
-.card.green
+.card.green, .tag.green
 { border-color: var(--color-green); }
-button.green, input[type='submit'].green, .tag.green
+button.green, input[type='submit'].green
 { background-color: var(--color-green); }
-.tag.green { color:white }
 
 span.blue
 { color: var(--color-blue); }
-.card.blue
+.card.blue, .tag.blue
 { border-color: var(--color-blue); }
-button.blue, input[type='submit'].blue, .tag.blue
+button.blue, input[type='submit'].blue
 { background-color: var(--color-blue); }
-.tag.blue { color:white }
 
 span.orange
 { color: var(--color-orange); }
-.card.orange
+.card.orange, .tag.orange
 { border-color: var(--color-orange); }
-button.orange, input[type='submit'].orange, .tag.orange
+button.orange, input[type='submit'].orange
 { background-color: var(--color-orange); }
-.tag.orange { color:white }
 
 span.randers
 { color: var(--randers-color-); }
-.card.randers
+.card.randers, .tag.randers
 { border-color: var(--randers-color-); }
-button.randers, input[type='submit'].randers, .tag.randers
+button.randers, input[type='submit'].randers
 { background-color: var(--randers-color-); }
-.tag.randers { color:white }

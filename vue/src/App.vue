@@ -32,6 +32,7 @@ import Header from './components/Menu.vue'
     background-color: var(--color-bg-light);
 
     padding: 2.5rem 3.5rem;
+    padding-bottom: 6rem;
 }
 
 main

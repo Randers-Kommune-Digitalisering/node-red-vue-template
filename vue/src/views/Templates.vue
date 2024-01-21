@@ -236,4 +236,19 @@
 
     </Content>
 
+
+    <!-- Milligram -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Milligram CSS</template>
+
+        <span class="paragraph">
+            Dette template er baseret på Milligram, et minimalistisk CSS-framwork.
+            Yderligere dokumentation på mere almindelig HTML-formatering, herunder typografi, lister mv. findes på <a href="https://milligram.io/#typography" target="_blank">Milligram's hjemmeside</a>.
+        </span>
+        
+    </Content>
+
 </template>
