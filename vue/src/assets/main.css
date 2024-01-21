@@ -21,6 +21,7 @@
     --color-red: rgb(179, 38, 38);
     --color-blue: rgb(27, 153, 207);
     --color-orange: rgb(208, 140, 21);
+    --color-white: rgb(248, 248, 248);
 
     --color-border: #e1e1e1;
     --color-border-dark: #d1d1d1;
@@ -206,7 +207,7 @@ input[type='checkbox'] + label, input[type='radio'] + label
         width: calc(50% - 0.5rem); /* When screen is larger than mobile */
     }
 }
-    .card > .card-header
+    .card > .header
     {
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
@@ -234,6 +235,36 @@ input[type='checkbox'] + label, input[type='radio'] + label
     {
         margin-top: 2rem;
     }
+
+.message
+{
+    background-color: var(--color-border-dark);
+    border-radius: 0.5rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+}
+    .message > .header
+    {
+        font-weight: 400;
+        font-size: 1.2em;
+    }
+    .message > .header > .close
+    {
+        background-color: var(--color-border);
+        font-size: 0.8em;
+        border-radius: 0.5rem;
+        padding: 0rem 1rem;
+    }
+        .message > .header > .close:hover
+        {
+            cursor: pointer;
+            background-color: var(--color-bg-light);
+        }
+    .message.hidden
+    {
+        display: none;
+    }
+
 
 
 /* Custom style classes */
@@ -274,36 +305,41 @@ span.red
 { color: var(--color-red); }
 .card.red, .tag.red
 { border-color: var(--color-red); }
-button.red, input[type='submit'].red
+button.red, input[type='submit'].red, .message.red
 { background-color: var(--color-red); }
 
 span.green
 { color: var(--color-green); }
 .card.green, .tag.green
 { border-color: var(--color-green); }
-button.green, input[type='submit'].green
+button.green, input[type='submit'].green, .message.green
 { background-color: var(--color-green); }
 
 span.blue
 { color: var(--color-blue); }
 .card.blue, .tag.blue
 { border-color: var(--color-blue); }
-button.blue, input[type='submit'].blue
+button.blue, input[type='submit'].blue, .message.blue
 { background-color: var(--color-blue); }
 
 span.orange
 { color: var(--color-orange); }
 .card.orange, .tag.orange
 { border-color: var(--color-orange); }
-button.orange, input[type='submit'].orange
+button.orange, input[type='submit'].orange, .message.orange
 { background-color: var(--color-orange); }
 
 span.randers
 { color: var(--randers-color-); }
 .card.randers, .tag.randers
 { border-color: var(--randers-color-); }
-button.randers, input[type='submit'].randers
+button.randers, input[type='submit'].randers, .message.randers
 { background-color: var(--randers-color-); }
+
+.message.red, .message.green, .message.blue, .message.orange, .message.randers
+{ color: var(--color-white); }
+.message .close
+{ color: var(--color-text) }
 
 
 /* Dark mode */
@@ -319,7 +355,7 @@ button.randers, input[type='submit'].randers
     --color-border: #2f2f2f;
     --color-border-dark: #383838;
 }
-.darkmode input, code {
+.darkmode input, code, .darkmode table, .darkmode table * {
     border-color: var(--color-border-dark);
     color: var(--color-text);
 }

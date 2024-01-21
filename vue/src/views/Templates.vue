@@ -39,9 +39,11 @@
 
     const rangeValue = ref(50)
 
-    function calcRangeBg()
+    function deleteMessage(messageId)
     {
-        return "blue";
+        const element = document.getElementById(messageId);
+        if(element)
+            element.remove();
     }
 
 </script>
@@ -98,12 +100,12 @@
         </template>
         <template #heading>Kort</template>
 
-        <span class="paragraph">Kort indsættes som <code>&lt;div&gt;</code>-elementer med klassen <code>card</code>, og kan indeholde en <code>card-header</code> og en <code>card-body</code>. Kortene kan farves med predefinerede farveklasser.</span>
+        <span class="paragraph">Kort indsættes som <code>&lt;div&gt;</code>-elementer med klassen <code>card</code>, og kan indeholde en <code>header</code> og en <code>card-body</code>. Kortene kan farves med predefinerede farveklasser.</span>
 
         <div class="flexbox">
             
             <div class="card">
-                <div class="card-header">
+                <div class="header">
                     <span v-if="selectedData['name']">{{selectedData['name']}}</span>
                     <span v-else>Overskrift</span>
                 </div>
@@ -123,7 +125,7 @@
             </div>
 
             <div class="card blue">
-                <div class="card-header">
+                <div class="header">
                     Overskrift
                 </div>
                 <div class="card-body">
@@ -132,7 +134,7 @@
             </div>
 
             <div class="card green">
-                <div class="card-header">
+                <div class="header">
                     Overskrift
                 </div>
                 <div class="card-body">
@@ -141,7 +143,7 @@
             </div>
 
             <div class="card red">
-                <div class="card-header">
+                <div class="header">
                     Overskrift
                 </div>
                 <div class="card-body">
@@ -150,7 +152,7 @@
             </div>
 
             <div class="card orange">
-                <div class="card-header">
+                <div class="header">
                     Overskrift
                 </div>
                 <div class="card-body">
@@ -159,7 +161,7 @@
             </div>
 
             <div class="card randers">
-                <div class="card-header">
+                <div class="header">
                     Overskrift
                 </div>
                 <div class="card-body">
@@ -269,6 +271,72 @@
         <span class="tag orange">Orange tag</span>
         <span class="tag randers">Randers tag</span>
 
+    </Content>
+
+
+    <!-- Alerts -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Beskeder</template>
+
+        <span class="paragraph">
+            Beskeder indsættes som <code>&lt;div&gt;</code>-elementer, og kan indeholde en <code>header</code>. Beskeder kan farves med predefinerede farveklasser.
+        </span>
+
+        <div class="message" id="msg1">
+            <div class="header">
+                Overskrift
+                <span class="float-right close" @click="deleteMessage('msg1')">x</span>
+            </div>
+            Her er en vigtig besked med en beskrivelse.
+        </div>
+
+        <div class="flexbox">
+
+            <div class="message blue" id="msg2">
+                <div class="header">
+                    Overskrift
+                    <span class="float-right close" @click="deleteMessage('msg2')">x</span>
+                </div>
+                Her er en vigtig besked med en beskrivelse.
+            </div>
+
+            <div class="message green" id="msg3">
+                <div class="header">
+                    Overskrift
+                    <span class="float-right close" @click="deleteMessage('msg3')">x</span>
+                </div>
+                Her er en vigtig besked med en beskrivelse.
+            </div>
+
+            <div class="message red" id="msg4">
+                <div class="header">
+                    Overskrift
+                    <span class="float-right close" @click="deleteMessage('msg4')">x</span>
+                </div>
+                Her er en vigtig besked med en beskrivelse.
+            </div>
+
+            <div class="message orange" id="msg5">
+                <div class="header">
+                    Overskrift
+                    <span class="float-right close" @click="deleteMessage('msg5')">x</span>
+                </div>
+                Her er en vigtig besked med en beskrivelse.
+            </div>
+
+            <div class="message randers" id="msg6">
+                <div class="header">
+                    Overskrift
+                    <span class="float-right close" @click="deleteMessage('msg6')">x</span>
+                </div>
+                Her er en vigtig besked med en beskrivelse.
+            </div>
+
+        </div>
+        
     </Content>
 
 

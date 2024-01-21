@@ -99,7 +99,7 @@
         .header a .alert
         {
             font-size: 0.8em;
-            color: white;
+            color: var(--color-white);
             
             background-color: var(--randers-color-);
             border-radius: 0.3rem;
