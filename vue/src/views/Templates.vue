@@ -56,9 +56,14 @@
         </template>
         <template #heading>Paragraffer</template>
         
-        Til almindelige paragraffer er lavet et Vue komponent, <code>@/components/Content.vue</code>.
-        Komponentet benyttes med <code>&ltContent&gt</code> HTML tagget efter import, og inderholder et <code>#icon</code>,
-        en <code>#heading</code>, og subtekst.
+        <span class="paragraph">
+            Til paragraffer med overskrifter er lavet et Vue komponent, <code>@/components/Content.vue</code>.
+            Komponentet benyttes med <code>&ltContent&gt</code> HTML tagget efter import, og inderholder et <code>#icon</code>,
+            en <code>#heading</code>, og subtekst.
+        </span>
+        <span class="paragraph">
+            Herudover findes klassen <code>paragraph</code> som kan tilknyttes eksempelvis <code>&lt;span&gt;</code>-elementer for at skabe naturlige afsnit i tekst og andet indhold.
+        </span>
     </Content>
 
     <!-- Dynamisk tabel-->
@@ -67,6 +72,10 @@
             <IconTable />
         </template>
         <template #heading>Dynamisk tabel</template>
+
+        <span class="paragraph">
+            Tabeller indsættes med almindeligt HTML, og kan laves dynamiske med Vue's <code>v-for</code>-tag. Tabeller kan også indsættes i kort hvortil de automatisk tilpasses.
+        </span>
         
         <table>
             <thead>
@@ -88,6 +97,8 @@
 
         </template>
         <template #heading>Kort</template>
+
+        <span class="paragraph">Kort indsættes som <code>&lt;div&gt;</code>-elementer med klassen <code>card</code>, og kan indeholde en <code>card-header</code> og en <code>card-body</code>. Kortene kan farves med predefinerede farveklasser.</span>
 
         <div class="flexbox">
             
@@ -147,6 +158,15 @@
                 </div>
             </div>
 
+            <div class="card randers">
+                <div class="card-header">
+                    Overskrift
+                </div>
+                <div class="card-body">
+                    Dette kort har klassen <code>randers</code>. Du kan også lave tekst i <code>&lt;span&gt;</code>-elementer <span class="randers">Randers-blå</span>.
+                </div>
+            </div>
+
 
         </div><!-- /flexbox -->
 
@@ -157,8 +177,12 @@
         <template #icon>
 
         </template>
-        <template #heading>Dynamisk formular</template>
+        <template #heading>Formular</template>
 
+        <span class="paragraph">
+            Formularer indsættes som almindelig HTML og kan gøres client-sided med Vue's <code>@submit.prevent</code>-tag.
+            Formularen herunder er ligeledes bygget dynamisk med <code>v-for</code>-tag på objektets keys.
+        </span>
         
         <form @submit.prevent="addDataSample">
             <fieldset>
@@ -181,11 +205,35 @@
 
         </template>
         <template #heading>Range slider</template>
+
+        <span class="paragraph">
+            Range sliders kan ligeledes gøres dynamiske. Brug Vue's <code>v-model</code>-tag til at knytte slideren til en variabel.
+        </span>
         
         <h4 class="center"><span class="heavy">{{rangeValue}}</span> %</h4>
         <input v-model="rangeValue" type="range" min="0" max="100" value="50" :style="{ 'background': 'linear-gradient(to right,  var(--randers-color-light) 0%, var(--randers-color-light) '+rangeValue+'%, var(--color-border-dark) '+rangeValue+'%, var(--color-border-dark) 100%)' }">
 
     </Content>
-    <!--  -->
+
+
+    <!-- Tags -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Tags</template>
+
+        <span class="paragraph">
+            Info tags indsættes <code>&lt;span&gt;</code>-elementer med klassen <code>tag</code>. Tags kan farves med predefinerede farveklasser.
+        </span>
+        
+        <span class="tag">Almindeligt tag</span>
+        <span class="tag blue">Blåt tag</span>
+        <span class="tag green">Grønt tag</span>
+        <span class="tag red">Rødt tag</span>
+        <span class="tag orange">Orange tag</span>
+        <span class="tag randers">Randers tag</span>
+
+    </Content>
 
 </template>
