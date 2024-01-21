@@ -29,7 +29,7 @@ import Header from './components/Menu.vue'
     border-left: 0rem;
     border-right: 0rem;
 
-    background-color: var(--main-color-bg-light);
+    background-color: var(--color-bg-light);
 
     padding: 2.5rem 3.5rem;
 }
@@ -48,8 +48,8 @@ main
         /* Set width of main content */
         width: 85rem;
 
-        border-left: 0.1rem solid var(--main-color-border);
-        border-right: 0.1rem solid var(--main-color-border);
+        border-left: 0.1rem solid var(--color-border);
+        border-right: 0.1rem solid var(--color-border);
     }
 }
 @media screen and (min-width: 80rem)

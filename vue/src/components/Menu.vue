@@ -69,8 +69,8 @@
     transform: translateX(0rem);
     left: 0rem;
 
-    background-color: var(--main-color-bg);
-    border-bottom: 0.1rem solid var(--main-color-border);
+    background-color: var(--color-bg);
+    border-bottom: 0.1rem solid var(--color-border);
 
     overflow-x: auto;
 }
@@ -88,11 +88,11 @@
     }
         .header a:hover
         {
-            border-bottom: 0.4rem solid var(--main-color-light);
+            border-bottom: 0.4rem solid var(--randers-color-light);
         }
         .header a.selected
         {
-            border-bottom: 0.4rem solid var(--main-color-dark);
+            border-bottom: 0.4rem solid var(--randers-color-dark);
         }
         
 /* Tablet or desktop */
@@ -126,12 +126,12 @@
             }
             .header a:hover
             {
-                border-right: 0.4rem solid var(--main-color-light);
+                border-right: 0.4rem solid var(--randers-color-light);
                 border-bottom: 0rem;
             }
             .header a.selected
             {
-                border-right: 0.4rem solid var(--main-color-dark);
+                border-right: 0.4rem solid var(--randers-color-dark);
                 border-bottom: 0rem;
             }
 }

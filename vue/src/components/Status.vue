@@ -20,14 +20,14 @@ fetch('/api/status')
     
     <div>
         <span>Node-RED</span>:
-        <span v-if="statusNodered" class="fc-green fw-400">{{statusNodered}}</span>
-        <span v-else="statusNodered" class="fc-red fw-400">Not connected</span>
+        <span v-if="statusNodered" class="green heavy">{{statusNodered}}</span>
+        <span v-else="statusNodered" class="red heavy">Not connected</span>
     </div>
 
     <div>
         <span>Express</span>:
-        <span v-if="statusExpress" class="fc-green fw-400">{{statusExpress}}</span>
-        <span v-else="statusExpress" class="fc-red fw-400">Not running</span>
+        <span v-if="statusExpress" class="green heavy">{{statusExpress}}</span>
+        <span v-else="statusExpress" class="red heavy">Not running</span>
     </div>
 </template>
 
@@ -36,6 +36,6 @@ fetch('/api/status')
     {
         margin-top: 1rem;
         padding-left: 1.5rem;
-        border-left: 0.1rem solid var(--main-color-border);
+        border-left: 0.1rem solid var(--color-border);
     }
 </style>

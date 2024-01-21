@@ -7,12 +7,20 @@
 
 @import './randers.css';    /* Custom Randers CSS */
 
-/* Base CSS */
+/* Base CSS changes */
+
+:root
+{
+    --color-green: rgb(35, 176, 106);
+    --color-red: rgb(179, 38, 38);
+    --color-blue: rgb(27, 153, 207);
+    --color-orange: rgb(208, 140, 21);
+}
 
 body
 {
-    background-color: var(--main-color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
-    color: var(--main-color-text);
+    background-color: var(--color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
+    color: var(--color-text);
 }
 
 html
@@ -27,14 +35,19 @@ main
     min-height: 100vh;
 }
 
+span
+{
+    display: inline-block;
+}
+
 a
 {
     font-weight: 400;
 }
 
 h2 {
-    border-bottom: 0.1rem solid var(--main-color-border); /* Old: rgb(235, 235, 235); */
-    color:var(--main-color-text-dark);
+    border-bottom: 0.1rem solid var(--color-border); /* Old: rgb(235, 235, 235); */
+    color:var(--color-text-dark);
 }
 
 h2:not(:first-of-type), h3:not(:first-of-type), h4:not(:first-of-type), h5:not(:first-of-type), h6:not(:first-of-type)
@@ -46,6 +59,11 @@ h3 {
     padding-top: 2rem;
 }
 
+h3 > svg
+{
+    margin-right: 1rem;
+}
+
 h2 ~ h3:first-of-type {
     padding-top: 0rem!important;
 }
@@ -55,33 +73,36 @@ th, label
     font-weight: 500;
 }
 
-/* Custom classes */
-
-.fw-400 
+table
 {
-    font-weight: 400;
-}
-.fc-red
-{
-    color: rgb(109, 46, 46);
-}
-.fc-green
-{
-    color: rgb(46, 109, 77);
+    margin-bottom: auto;
 }
 
+
+
+/* Custom colored elements */
+
+span.red
+{ color: var(--color-red); }
 .card.red
-{
+{ border-color: var(--color-red); }
 
-}
+span.green
+{ color: var(--color-green); }
 .card.green
-{
+{ border-color: var(--color-green); }
 
-}
+span.blue
+{ color: var(--color-blue); }
 .card.blue
-{
+{ border-color: var(--color-blue); }
 
-}
+span.orange
+{ color: var(--color-orange); }
+.card.orange
+{ border-color: var(--color-orange); }
+
+
 
 /* Custom components */
 
@@ -90,27 +111,63 @@ th, label
     display: flex;
     justify-content: flex-start;
     align-items: start;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .card
 {
     border-radius: 0.5rem;
-    border: 0.1rem solid var(--main-color-border-dark);
+    border: 0.1rem solid var(--color-border-dark);
 
-    margin-bottom: 2rem;
-    width: 35rem;
+    width: 100%; /* Mobile first */
+}
+
+@media screen and (min-width: 40rem) /* 850px or 85rem using 16 px conversion */
+{
+    .card
+    {    
+        width: calc(50% - 0.5rem); /* When screen is larger than mobile */
+    }
 }
     .card > .card-header
     {
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
-        border-bottom: 0.1rem solid var(--main-color-border); 
-        background-color: var(--main-color-bg);
+        border-bottom: 0.1rem solid var(--color-border); 
+        background-color: var(--color-bg);
 
         font-weight: 500;
-        padding: 1rem 1.2rem;
+        padding: 1rem 1.5rem;
     }
     .card > .card-body
     {
-        padding: 1.5rem 1.2rem;
+        padding: 1.2rem 1.5rem;
     }
+
+    .card table
+    {
+        margin-top: -1rem;
+        margin-bottom: -1rem;
+    }
+    .card table > tr:last-of-type > td
+    {
+        border-bottom: 0rem;
+    }
+    .card table ~ *
+    {
+        margin-top: 2rem;
+    }
+
+
+
+/* Custom style classes */
+
+.capitalize
+{ text-transform: capitalize; }
+
+.heavy
+{ font-weight: 400; }
+
+.column
+{ flex-direction: column; }

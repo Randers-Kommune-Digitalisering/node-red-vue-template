@@ -64,7 +64,7 @@
         <table>
             <thead>
                 <tr>
-                    <th v-for="key in Object.keys(sampleData[0])" class="cap">{{key}}</th>
+                    <th v-for="key in Object.keys(sampleData[0])" class="capitalize">{{key}}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -83,20 +83,66 @@
         <template #heading>Kort</template>
 
         <div class="flexbox">
+            
             <div class="card">
                 <div class="card-header">
                     <span v-if="selectedData['name'] == null">Overskrift</span>
                     <span v-else>{{selectedData['name']}}</span>
                 </div>
+                
                 <div class="card-body">
-                    <div v-for="key in Object.keys(selectedData)" class="cap lastDivPad">
-                        <span class="fw-400">{{key}}</span>:
-                        {{selectedData[key]}}
-                    </div>
+
+                    <table v-if="selectedData['name'] != null">
+                        <tr v-for="key in Object.keys(selectedData)">
+                            <td class="capitalize heavy">{{key}}</td>
+                            <td>{{selectedData[key]}}</td>
+                        </tr>
+                    </table>
+                    
+                    <span>Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.</span>
+
+                </div>
+            </div>
+
+            <div class="card blue">
+                <div class="card-header">
+                    Overskrift
+                </div>
+                <div class="card-body">
                     Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
                 </div>
             </div>
-        </div>
+
+            <div class="card green">
+                <div class="card-header">
+                    Overskrift
+                </div>
+                <div class="card-body">
+                    Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
+                </div>
+            </div>
+
+            <div class="card red">
+                <div class="card-header">
+                    Overskrift
+                </div>
+                <div class="card-body">
+                    Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
+                </div>
+            </div>
+
+            <div class="card orange">
+                <div class="card-header">
+                    Overskrift
+                </div>
+                <div class="card-body">
+                    Tryk på en "Se mere"-knap fra den dynamiske tabel for at udfylde kortet.
+                </div>
+            </div>
+
+
+        </div><!-- /flexbox -->
+
     </Content>
 
     <!-- Formular -->
@@ -109,7 +155,7 @@
         <form @submit.prevent="addDataSample">
             <fieldset>
                 <div v-for="key in Object.keys(sampleData[0])">
-                    <label :for="key" class="cap">{{key}}</label>
+                    <label :for="key" class="capitalize">{{key}}</label>
                     <input type="text" placeholder="..." :id="key" v-model="newDataSample[key]" required>
                 </div>
 
@@ -123,10 +169,6 @@
 </template>
 
 <style scoped>
-    .cap
-    {
-        text-transform: capitalize;
-    }
     .lastDivPad:last-of-type
     {
         padding-bottom: 1rem;
