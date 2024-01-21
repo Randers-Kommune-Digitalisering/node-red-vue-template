@@ -198,6 +198,35 @@
         </form>
     </Content>
 
+
+    <!-- Radio knapper -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Radio knapper og checkbokse</template>
+
+        <div class="flexbox grow">
+            <form @submit.prevent="">
+                <input type="radio" id="One" name="radio" value="One">
+                <label for="One">One</label><br>
+                <input type="radio" id="Two" name="radio" value="Two">
+                <label for="Two">Two</label><br>
+                <input type="radio" id="Three" name="radio" value="Three">
+                <label for="Three">Three</label><br>
+            </form>
+
+            <form @submit.prevent="">
+                <input type="checkbox" id="One-C" name="One" value="One">
+                <label for="One-C">One</label><br>
+                <input type="checkbox" id="Two-C" name="Two" value="Two">
+                <label for="Two-C">Two</label><br>
+                <input type="checkbox" id="Three-C" name="Three" value="Three">
+                <label for="Three-C">Three</label><br>
+            </form>
+        </div>
+    </Content>
+
     
     <!-- Range slider -->
     <Content>
@@ -212,6 +241,12 @@
         
         <h4 class="center"><span class="heavy">{{rangeValue}}</span> %</h4>
         <input v-model="rangeValue" type="range" min="0" max="100" value="50" :style="{ 'background': 'linear-gradient(to right,  var(--randers-color-light) 0%, var(--randers-color-light) '+rangeValue+'%, var(--color-border-dark) '+rangeValue+'%, var(--color-border-dark) 100%)' }">
+
+        <span class="paragraph">
+            Range sliders kan også bruges som f.eks. progress-bars, ved at sætte elementet som <code>disabled</code>.
+        </span>
+
+        <input type="range" min="0" max="100" :value="rangeValue" :style="{ 'background': 'linear-gradient(to right,  var(--randers-color-light) 0%, var(--randers-color-light) '+rangeValue+'%, var(--color-border-dark) '+rangeValue+'%, var(--color-border-dark) 100%)' }" disabled>
 
     </Content>
 

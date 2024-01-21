@@ -23,6 +23,10 @@
     --randers-color-dark: #243576;
     --randers-color-light: #6f7eb4;
 }
+.darkmode, .darkmode *
+{
+    --randers-color-: #3b57b9;
+}
 
 a
 {

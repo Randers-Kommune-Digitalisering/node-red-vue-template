@@ -26,15 +26,20 @@
     --color-border-dark: #d1d1d1;
 }
 
-body
+*
 {
-    background-color: var(--color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
-    color: var(--color-text);
+    box-sizing: border-box;
 }
 
 html
 {
     overflow-y: scroll;
+}
+
+body
+{
+    background-color: var(--color-bg); /* Brighter: #fafafa; Old: #f4f5f6; */
+    color: var(--color-text);
 }
 
 main
@@ -52,6 +57,11 @@ span
 a
 {
     font-weight: 400;
+}
+
+input, a, button
+{
+    transition: 120ms ease-in-out;
 }
 
 h2 {
@@ -84,6 +94,11 @@ button, input[type='submit']
     border: 0rem;
 }
 
+input
+{
+    border-color: var(--color-border-dark);
+}
+
 input:not([type='submit']):focus
 {
     border-color: var(--color-blue);
@@ -92,35 +107,62 @@ input:not([type='submit']):required:invalid:focus
 {
     border-color: var(--color-orange);
 }
+
 input[type='range']
 {
+    -webkit-appearance: none;
     appearance: none;
     width: 100%;
     height: 1.2rem;
     border-radius: 0.65rem;
     background: var(--color-border-dark);
 }
+    input[type='range']:not(:disabled)::-webkit-slider-thumb
+    {
+        appearance: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%; 
+        background: var(--randers-color-dark);
+        cursor: pointer;
+    }
+        input[type='range']:not(:disabled)::-webkit-slider-thumb:hover
+        {
+            background: var(--randers-color-);
+        }
+    input[type='range']:not(:disabled)::-moz-range-thumb
+    {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: var(--randers-color-);
+        cursor: pointer;
+    }
+        input[type='range']:not(:disabled)::-moz-range-thumb:hover
+        {
+            background: var(--randers-color-);
+        }
+    input[type='range']:disabled::-webkit-slider-thumb
+    {
+        display: none;
+    }
+    input[type='range']:disabled::-moz-range-thumb
+    {
+        display: none;
+    }
 
-input[type='range']::-webkit-slider-thumb
+input[type='checkbox'], input[type='radio']
 {
-    appearance: none;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%; 
-    background: var(--randers-color-dark);
-    cursor: pointer;
+    padding-top: 1rem;
+    width: 1.5rem;
+    height: 1.6rem;
+    border-radius: 10rem;
+    transform: translateY(0.25rem);
 }
-input[type='range']::-webkit-slider-thumb:hover
+input[type='checkbox'] + label, input[type='radio'] + label
 {
-    background: var(--randers-color-);
-}
-input[type='range']::-moz-range-thumb
-{
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--randers-color-);
-    cursor: pointer;
+    display: inline-block;
+    margin-left: 1rem;
 }
 
 
@@ -139,6 +181,10 @@ input[type='range']::-moz-range-thumb
     align-items: start;
     flex-wrap: wrap;
     gap: 1rem;
+}
+.flexbox.grow > *
+{
+    flex-grow: 1;
 }
     .flexbox > div
     {
@@ -206,7 +252,7 @@ input[type='range']::-moz-range-thumb
 
 .tag
 {
-    font-size: 0.95em;
+    font-size: 0.9em;
     color: var(--color-text-dark)!important;
     
     border: 0.1rem solid var(--color-border-dark);
@@ -258,3 +304,25 @@ span.randers
 { border-color: var(--randers-color-); }
 button.randers, input[type='submit'].randers
 { background-color: var(--randers-color-); }
+
+
+/* Dark mode */
+
+.darkmode, .darkmode *
+{
+    --color-bg: #1c1c1c;
+    --color-bg-light: #212121;
+
+    --color-text: #bababa;
+    --color-text-dark: #c8c8c8;
+
+    --color-border: #2f2f2f;
+    --color-border-dark: #383838;
+}
+.darkmode input, code {
+    border-color: var(--color-border-dark);
+    color: var(--color-text);
+}
+.darkmode code, .darkmode .tag {
+    background-color: var(--color-border-dark);
+}
