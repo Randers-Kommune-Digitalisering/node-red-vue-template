@@ -1,3 +1,4 @@
+
 # <img src="https://user-images.githubusercontent.com/80261692/226564602-21d9c099-7c27-4ab0-80cb-295844e318de.png" width="54"> Node-RED template-projekt
 
 Template til nye Node-RED projekter med Vue frontend.
@@ -48,3 +49,18 @@ Ved byg af Node-RED kopieres følgende filer ind i containeren:
 * [node-red/settings.js](node-red/settings.js)
 * [node-red/flows_cred.json](node-red/flows_cred.json)
 * [node-red/flows.json](node-red/flows.json)
+
+## Merge med eksisterende Node-RED repository:
+
+Det er muligt at merge et repository som er baseret på det oprindelige [Node-RED template](https://github.com/Randers-Kommune-Digitalisering/node-red-template), således en Vue front-end tilføjes til det eksiterende projekt.
+
+1. Gå til dit Node-RED projekt og opret en ny branch
+2. Åbn et CodeSpace på denne branch
+3. Kør følgende kommandoer i konsol:
+> git remote add template https://github.com/Randers-Kommune-Digitalisering/node-red-vue-template
+>
+>git fetch --all
+>
+>git merge template/main --alow-unrelated-histories
+
+Vær opmærksom på eventuelle merge konflikter som skal løses manuelt.
