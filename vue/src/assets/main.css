@@ -95,7 +95,7 @@ button, input[type='submit']
     border: 0rem;
 }
 
-input
+input, input[type='text']
 {
     border-color: var(--color-border-dark);
 }
@@ -391,9 +391,9 @@ button.randers, input[type='submit'].randers, .message.randers
     --color-text-dark: #c8c8c8;
 
     --color-border: #2f2f2f;
-    --color-border-dark: #383838;
+    --color-border-dark: #474747;
 }
-.darkmode input, code, .darkmode table, .darkmode table * {
+.darkmode input, .darkmode code, .darkmode table, .darkmode table * {
     border-color: var(--color-border-dark);
     color: var(--color-text);
 }
