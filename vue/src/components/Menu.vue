@@ -31,6 +31,15 @@
         menuItems.value.forEach(x => x.selected = false)
         item.selected = true
     }
+
+    // Dark mode
+
+    function toggleDarkMode()
+    {
+        const element = document.getElementById("body");
+        element.classList.toggle("darkmode");
+    }
+
 </script>
 
 <template>
@@ -43,6 +52,13 @@
             <span v-if="item.alert" class="alert">{{item.alert}}</span>
             <span>{{item.title}}</span>
         </router-link>
+
+        <div class="filler"></div>
+
+        <div class="darkmodeItem">       
+            <input type="checkbox" id="darkmodeToggle" name="darkmodeToggle" @click="toggleDarkMode()">
+            <label for="darkmodeToggle">Dark Mode</label>
+        </div>
 
     </div>
 
@@ -64,6 +80,7 @@
     align-items: flex-end;
 
     padding-top: 0rem;
+    padding-right: 1.5rem;
 
     position: fixed;
     width: 100vw;
@@ -109,6 +126,26 @@
             
             line-height: normal;
         }
+    .header .filler 
+    {
+        flex-grow: 1;
+    }
+    .header .darkmodeItem
+    {
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+
+        font-family: Inter;
+        line-height: 4rem;
+    }
+        .darkmodeItem input {
+            transform: translateY(0.5rem);
+        }
+        .darkmodeItem label
+        {
+            font-size: 0.8em;
+            transform: translateY(0.1rem);
+        }
         
 /* Tablet or desktop */
 @media screen and (min-width: 80rem) /* 1280 px */
@@ -120,11 +157,12 @@
         align-items: flex-end;
 
         padding-top: 2.5rem;
+        padding-right: 0rem;
 
         right: 50%;
         transform: translateX(-42.5rem);
         width: auto;
-        height: auto;
+        height: 100vh;
 
         border-bottom: 0rem;
     }
