@@ -137,6 +137,7 @@
 
         font-family: Inter;
         line-height: 4rem;
+        white-space: nowrap;
     }
         .darkmodeItem input {
             transform: translateY(0.5rem);

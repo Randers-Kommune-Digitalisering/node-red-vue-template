@@ -51,7 +51,7 @@
 <template>
     <h2>User-Interface Templates</h2>
     
-    <!-- Paragraffer -->
+    <!-- Paragraphs-->
     <Content>
         <template #icon>
             <IconAlignLeft />
@@ -68,7 +68,7 @@
         </span>
     </Content>
 
-    <!-- Dynamisk tabel-->
+    <!-- Table -->
     <Content>
         <template #icon>
             <IconTable />
@@ -93,7 +93,7 @@
         </table>
     </Content>
 
-    <!-- Info-kort -->
+    <!-- Cards -->
     <Content>
         <template #icon>
 
@@ -174,7 +174,7 @@
 
     </Content>
 
-    <!-- Formular -->
+    <!-- Forms -->
     <Content>
         <template #icon>
 
@@ -201,12 +201,16 @@
     </Content>
 
 
-    <!-- Radio knapper -->
+    <!-- Radio buttons -->
     <Content>
         <template #icon>
 
         </template>
         <template #heading>Radio knapper og checkbokse</template>
+
+        <span class="paragraph">
+            Radio knapper og checkbokse indsættes som almindelige HTML <code>&lt;input&gt;</code>-elementer, efterfulgt af et <code>&lt;label&gt;</code>-element.
+        </span>
 
         <div class="flexbox grow">
             <form @submit.prevent="">
@@ -285,12 +289,16 @@
             Beskeder indsættes som <code>&lt;div&gt;</code>-elementer, og kan indeholde en <code>header</code>. Beskeder kan farves med predefinerede farveklasser.
         </span>
 
-        <div class="message" id="msg1">
-            <div class="header">
-                Overskrift
-                <span class="float-right close" @click="deleteMessage('msg1')">x</span>
+        <div class="paragraph">
+
+            <div class="message" id="msg1">
+                <div class="header">
+                    Overskrift
+                    <span class="float-right close" @click="deleteMessage('msg1')">x</span>
+                </div>
+                Her er en vigtig besked med en beskrivelse.
             </div>
-            Her er en vigtig besked med en beskrivelse.
+
         </div>
 
         <div class="flexbox">
@@ -335,6 +343,33 @@
                 Her er en vigtig besked med en beskrivelse.
             </div>
 
+        </div>
+        
+    </Content>
+
+    
+    <!-- Pagination -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Sidenummerering</template>
+
+        <span class="paragraph">
+            Sidenummering indsættes som <code>&lt;router-link&gt;</code>-elementer, i en <code>&lt;div&gt;</code> med klassen <code>pagination</code>.
+            Nummeringerne kan have klasserne <code>disabled</code> eller <code>selected</code>.
+        </span>
+        
+        <div class="paragraph">
+            <div class="pagination">
+                <router-link to="" class="disabled">&lt;</router-link>
+                <router-link to="" class="selected">1</router-link>
+                <router-link to="">2</router-link>
+                <router-link to="">3</router-link>
+                <router-link to="">4</router-link>
+                <router-link to="">5</router-link>
+                <router-link to="">&gt;</router-link>
+            </div>
         </div>
         
     </Content>
