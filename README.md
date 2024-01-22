@@ -64,6 +64,6 @@ Det er muligt at merge et repository som er baseret på det oprindelige [Node-RE
 >
 >git fetch --all
 >
->git merge template/main --alow-unrelated-histories
+>git merge template/main --allow-unrelated-histories
 
 Vær opmærksom på eventuelle merge konflikter som skal løses manuelt.
