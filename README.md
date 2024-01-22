@@ -55,8 +55,11 @@ Ved byg af Node-RED kopieres følgende filer ind i containeren:
 Det er muligt at merge et repository som er baseret på det oprindelige [Node-RED template](https://github.com/Randers-Kommune-Digitalisering/node-red-template), således en Vue front-end tilføjes til det eksiterende projekt.
 
 1. Gå til dit Node-RED projekt og opret en ny branch
+
 2. Åbn et CodeSpace på denne branch
+
 3. Kør følgende kommandoer:
+
 > git remote add template https://github.com/Randers-Kommune-Digitalisering/node-red-vue-template
 >
 >git fetch --all
