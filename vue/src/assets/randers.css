@@ -1,62 +1,55 @@
 /* Randers design */ 
 
-.randers-logo {
+.randers-logo
+{
     background-image: url('https://www.randers.dk/static/logo.svg');
     filter: brightness(0) saturate(100%) invert(20%) sepia(9%) saturate(7487%) hue-rotate(200deg) brightness(94%) contrast(95%);
 
-    background-position: 15px 5px;
+    background-position: 1.5rem 0.5rem;
     background-size: 85%;
     background-repeat: no-repeat;
 
-    width: 200px;
-    height: 45px;
+    width: 20rem;
+    height: 4.5rem;
 }
+
+
 
 /* Randers farver */
 
 :root
 {
-    --main-color-bg: #faf9f8;
-    --main-color-bg-light: #fbfbfb;
-
-    --main-color-text: #4a535a;
-    --main-color-text-dark: #3c4349;
-
-    --main-color: #2f469c;
-    --main-color-dark: #243576;
-    --main-color-light: #6f7eb4;
-
-    --main-color-border: #e1e1e1;
-    --main-color-border-dark: #d1d1d1;
+    --randers-color-: #2f469c;
+    --randers-color-dark: #243576;
+    --randers-color-light: #6f7eb4;
+}
+.darkmode, .darkmode *
+{
+    --randers-color-: #3b57b9;
 }
 
 a
 {
-    color: var(--main-color); 
+    color: var(--randers-color-); 
 }
     a:focus
     {
-        color: var(--main-color);
+        color: var(--randers-color-);
     }
     a:hover
     {
-        color: var(--main-color-light);
+        color: var(--randers-color-light);
     }
 
 button, input[type='submit']
 {
-    background-color: var(--main-color);
+    background-color: var(--randers-color-);
 }
     button:focus, input[type='submit']:focus
     {
-        background-color: var(--main-color);
+        background-color: var(--randers-color-);
     }
     button:hover, input[type='submit']:hover
     {
-        background-color: var(--main-color-light);
+        background-color: var(--randers-color-light);
     }
-
-input:not([type='submit']):focus
-{
-    border-color: var(--main-color);
-}

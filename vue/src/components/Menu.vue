@@ -1,7 +1,7 @@
 <script setup>
     import { ref } from 'vue'
 
-    // Opsætning af menupunkter
+    // Set menu items
 
     const menuItems = ref([
         {
@@ -10,7 +10,8 @@
         },
         {
             "title": "UI Templates",
-            "url": "/templates"
+            "url": "/templates",
+            "alert": "12"
         },
         {
             "title": "Vue Info",
@@ -18,118 +19,189 @@
         }
     ])
 
-    // Sæt selected = true landing page
+    // Set selected = true for landing page
 
     menuItems.value[ menuItems.value.findIndex(x => x.url == new URL(location.href).pathname) ].selected = true
 
 
-    // Funktion til visuelt at opdatere menu selection
+    // Function to visually update selected item
 
     function select(item)
     {
         menuItems.value.forEach(x => x.selected = false)
         item.selected = true
     }
+
+    // Dark mode
+
+    function toggleDarkMode()
+    {
+        const element = document.getElementById("body");
+        element.classList.toggle("darkmode");
+    }
+
 </script>
 
 <template>
 
-    <div class="sidebar">
+    <div class="header">
 
         <div class="randers-logo"></div>
         
         <router-link v-for="item in menuItems" :to="item.url" :class="item.selected ? 'selected' : ''" @click="select(item)">
+            <span v-if="item.alert" class="alert">{{item.alert}}</span>
             <span>{{item.title}}</span>
         </router-link>
+
+        <div class="filler"></div>
+
+        <div class="darkmodeItem">       
+            <input type="checkbox" id="darkmodeToggle" name="darkmodeToggle" @click="toggleDarkMode()">
+            <label for="darkmodeToggle">Dark Mode</label>
+        </div>
 
     </div>
 
 </template>
 
 <style scoped>
-.sidebar
+/* Mobile first */
+/* 1 rem = 10 px, except when defining @media rules, then 1 rem = 16 px */
+.randers-logo
+{
+    background-position: 2rem 0rem;
+}
+
+/* Is top header */
+.header
 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
 
-    padding-top: 25px;
+    padding-top: 0rem;
+    padding-right: 1.5rem;
 
     position: fixed;
-    right: 50%;
-    transform: translateX(-425px);
+    width: 100vw;
+    height: 6rem;
+    transform: translateX(0rem);
+    left: 0rem;
+
+    background-color: var(--color-bg);
+    border-bottom: 0.1rem solid var(--color-border);
+
+    overflow-x: auto;
 }
-    .sidebar a
+    .header a
     {
-        padding-right: 15px;
-        border-right: 4px solid #ffffff00;
-        line-height: 40px;
+        border-bottom: 0.4rem solid #ffffff00;
+
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
 
         font-family: Inter;
-        
+        line-height: 4rem;
+
         white-space: nowrap;
     }
-        .sidebar a:first-of-type {
-            margin-top: 20px;
+        .header a:hover
+        {
+            border-bottom: 0.4rem solid var(--randers-color-light);
         }
-        .sidebar a:hover {
-            border-right: 4px solid var(--main-color-light);
+        .header a.selected
+        {
+            border-bottom: 0.4rem solid var(--randers-color-dark);
         }
-        .sidebar a.selected {
-            border-right: 4px solid var(--main-color-dark)!important;
+        .header a .alert
+        {
+            font-size: 0.8em;
+            color: var(--color-white);
+            
+            background-color: var(--randers-color-);
+            border-radius: 0.3rem;
+            
+            padding: 0.1rem 0.4rem;
+            margin-right: 0.8rem;
+            
+            line-height: normal;
         }
+    .header .filler 
+    {
+        flex-grow: 1;
+    }
+    .header .darkmodeItem
+    {
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
 
-/* Responsive design - menu flyttes til header */
-@media screen and (max-width: 1200px)
+        font-family: Inter;
+        line-height: 4rem;
+        white-space: nowrap;
+    }
+        .darkmodeItem input {
+            transform: translateY(0.5rem);
+        }
+        .darkmodeItem label
+        {
+            font-size: 0.8em;
+            transform: translateY(0.1rem);
+        }
+        
+/* Tablet or desktop */
+@media screen and (min-width: 80rem) /* 1280 px */
 {
-    .randers-logo
+    /* Is lefside header */
+    .header
     {
-        margin-left: 5px;
-        background-position: 10px 0px;
+        flex-direction: column;
+        align-items: flex-end;
+
+        padding-top: 2.5rem;
+        padding-right: 0rem;
+
+        right: 50%;
+        transform: translateX(-42.5rem);
+        width: auto;
+        height: 100vh;
+
+        border-bottom: 0rem;
     }
-    .sidebar
-    {
-        flex-direction: row;
+        .header a
+        {
+            padding-right: 1.5rem;
 
-        padding-top: 0px;
-
-        width: 100vw;
-        height: 60px;
-        transform: translateX(0px);
-        left: 0px;
-
-        background-color: var(--main-color-bg);
-        border-bottom: 1px solid var(--main-color-border);
-
-        overflow-x: auto;
-    }
-    .sidebar a
-    {
-        border-bottom: 4px solid #ffffff00;
-        border-right: 0px;
-
-        padding-right: 12px;
-        padding-left: 12px;
-    }
-        .sidebar a {
-            margin-top: 0px!important;
+            border-bottom: 0rem;
+            border-right: 0.4rem solid #ffffff00;
         }
-        .sidebar a:hover {
-            border-bottom: 4px solid var(--main-color-light);
-            border-right: 0px!important;
-        }
-        .sidebar a.selected {
-            border-bottom: 4px solid var(--main-color-dark)!important;
-            border-right: 0px!important;
-        }
+            .header a:first-of-type
+            {
+                margin-top: 2rem;
+            }
+            .header a:hover
+            {
+                border-right: 0.4rem solid var(--randers-color-light);
+                border-bottom: 0rem;
+            }
+            .header a.selected
+            {
+                border-right: 0.4rem solid var(--randers-color-dark);
+                border-bottom: 0rem;
+            }
 }
 
+
 /* Logo skjules på meget små skærme */
-@media screen and (max-width: 800px)
+@media screen and (max-width: 35rem)
 {
     .randers-logo
     {
         display: none;
+    }
+    .header
+    {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 </style>
