@@ -1,7 +1,7 @@
 const Node = {
   "id": "db07758955177a13",
   "type": "comment",
-  "z": "971a7ae6df987a48",
+  "z": "VueExample",
   "name": "Demo endpoint for Vue",
   "info": "",
   "x": 160,
