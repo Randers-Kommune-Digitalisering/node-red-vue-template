@@ -50,7 +50,7 @@ Ved byg af Node-RED kopieres følgende filer ind i containeren:
 * [node-red/flows_cred.json](node-red/flows_cred.json)
 * [node-red/flows.json](node-red/flows.json)
 
-## Merge med eksisterende Node-RED repository:
+## Merge med eksisterende Node-RED projekt:
 
 Det er muligt at merge et repository som er baseret på det oprindelige [Node-RED template](https://github.com/Randers-Kommune-Digitalisering/node-red-template), således en Vue front-end tilføjes til det eksiterende projekt.
 
