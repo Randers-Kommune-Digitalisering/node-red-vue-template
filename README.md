@@ -36,7 +36,7 @@ Nedenstående relaterer sig til et nyt Node-RED + Vue projekt der er baseret på
 
 4. Åbn en ny konsol (CTRL + SHIFT + Æ)
 
-5. Kør følgende kommandoer for at starte lokal server:
+5. Kør følgende kommandoer for at starte lokal webserver:
 > cd vue
 > 
 > npm install
@@ -56,7 +56,7 @@ Det er muligt at merge et repository som er baseret på det oprindelige [Node-RE
 
 1. Gå til dit Node-RED projekt og opret en ny branch
 2. Åbn et CodeSpace på denne branch
-3. Kør følgende kommandoer i konsol:
+3. Kør følgende kommandoer:
 > git remote add template https://github.com/Randers-Kommune-Digitalisering/node-red-vue-template
 >
 >git fetch --all
