@@ -21,9 +21,12 @@
         }
     ])
 
-    // Set selected = true for landing page
+    // Set selected = true for landing page (URL)
 
-    menuItems.value[ menuItems.value.findIndex(x => x.url == new URL(location.href).pathname) ].selected = true
+    const landingPageIndex = menuItems.value.findIndex(x => x.url == new URL(location.href).pathname)
+
+    if(landingPageIndex !== -1)
+        menuItems.value[ landingPageIndex ].selected = true
 
 
     // Function to visually update selected item
