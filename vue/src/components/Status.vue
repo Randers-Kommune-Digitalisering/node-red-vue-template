@@ -6,13 +6,15 @@ const statusNodered = ref(null);
 // Express status
 fetch('/status')
     .then(response => response = response.json())
-    .then(data => statusExpress.value = data);
+    .then(value => statusExpress.value = value.status == "running" ? "Running" : null)
+    .then(value => console.log("Express status: \n" + value))
 
 // Node-RED status (uses /api/ proxy defined in Vite config)
 fetch('/api/status')
     .then(response => response = response.json())
     .then(value => statusNodered.value = value.success ? "Connected" : null)
-    .then(value => console.log(value));
+    .then(value => console.log("Node-RED status: \n" + value))
+
 </script>
 
 <template>
