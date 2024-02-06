@@ -1,6 +1,8 @@
 <script setup>
     import { ref } from 'vue'
 
+    defineExpose( { setAlert } )
+
     // Set menu items
 
     const menuItems = ref([
@@ -11,7 +13,7 @@
         {
             "title": "UI Templates",
             "url": "/templates",
-            "alert": "12"
+            "alert": "OBS"
         },
         {
             "title": "Vue Info",
@@ -30,6 +32,19 @@
     {
         menuItems.value.forEach(x => x.selected = false)
         item.selected = true
+    }
+
+    // Function to set alert on an item
+
+    function setAlert(itemTitle, alert)
+    {
+        // Delete alert
+        if(alert === "" || alert === null || alert === undefined)
+            delete menuItems.value[ menuItems.value.findIndex(x => x.title == itemTitle) ].alert
+
+        // Set alert
+        else
+            menuItems.value[ menuItems.value.findIndex(x => x.title == itemTitle) ].alert = alert
     }
 
     // Dark mode

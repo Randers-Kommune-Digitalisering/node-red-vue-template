@@ -46,6 +46,16 @@
             element.remove();
     }
 
+    // Event for setting header alert
+
+    const emit = defineEmits(['onHeaderAlert'])
+ 
+    const setHeaderAlert = (alert) => {
+        emit('onHeaderAlert', "UI Templates", alert)
+    }
+    
+    const newHeaderAlert = ref("")
+
 </script>
 
 <template>
@@ -371,6 +381,33 @@
                 <router-link to="">&gt;</router-link>
             </div>
         </div>
+        
+    </Content>
+
+
+    <!-- Milligram -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Header underretninger</template>
+
+        <span class="paragraph">
+            Tryk på knappen for at sætte en header underretning for menupunktet 'UI Templates'.
+        </span>
+
+        <form @submit.prevent="setHeaderAlert(newHeaderAlert)">
+            <fieldset>
+                <div class="flexbox">
+                    <div>
+                        <label for="newHeaderAlertTextbox" class="capitalize">Underretning</label>
+                        <input type="text" placeholder="Skriv en underretning, f.eks. et tal .." id="newHeaderAlertTextbox" v-model="newHeaderAlert">
+                    </div>
+                </div>
+
+                <input type="submit" value="Tilføj">
+            </fieldset>
+        </form>
         
     </Content>
 

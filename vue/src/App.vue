@@ -1,19 +1,28 @@
 <script setup>
+import { ref } from 'vue';
+
 import Header from './components/Menu.vue'
+const headerComponent = ref(null)
+const currentComponent = ref(null)
+
+// Function to update header alert from currentComponent
+const setHeaderAlert = (headerItemTitle, alertText) => {
+    headerComponent.value.setAlert(headerItemTitle, alertText)
+};
 </script>
 
 <template>
 
   <header>
 
-      <Header />
+      <Header ref="headerComponent" />
 
   </header>
   
   <main>
 
       <div class="content">
-          <router-view></router-view>
+          <router-view ref="currentComponent" @onHeaderAlert="setHeaderAlert"></router-view>
       </div>
 
   </main>
