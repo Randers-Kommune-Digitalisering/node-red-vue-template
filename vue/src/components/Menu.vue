@@ -172,6 +172,8 @@
     /* Is lefside header */
     .header
     {
+        background-color: #ffffff00;
+
         flex-direction: column;
         align-items: flex-end;
 
