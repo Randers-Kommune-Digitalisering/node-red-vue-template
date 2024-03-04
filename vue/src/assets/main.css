@@ -11,8 +11,7 @@
 
 :root
 {
-    --color-bg-old: #f8f7f6;
-    --color-bg: #f8f7f6;
+    --color-bg: #f0f5f3;
     --color-bg-light: #fbfbfb;
 
     --color-text: #444d54;
@@ -29,7 +28,7 @@
     --color-white: rgb(248, 248, 248);
 
     --color-border: #e1e1e1;
-    --color-border-dark: #d1d1d1;
+    --color-border-dark: #c5c5c5;
 }
 
 *
@@ -414,14 +413,14 @@ button.randers:hover, input[type='submit'].randers:hover
 
 .darkmode, .darkmode *
 {
-    --color-bg: #1c1c1c;
-    --color-bg-light: #212121;
+    --color-bg: #1a1a1a;
+    --color-bg-light: #1e1e1e;
 
     --color-text: #bababa;
-    --color-text-dark: #c8c8c8;
+    --color-text-dark: #f8f8f8;
 
-    --color-border: #2f2f2f;
-    --color-border-dark: #474747;
+    --color-border: #2b2b2b;
+    --color-border-dark: #4e4e4e;
 }
 .darkmode input, .darkmode code, .darkmode table, .darkmode table * {
     border-color: var(--color-border-dark);
