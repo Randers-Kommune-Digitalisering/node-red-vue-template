@@ -217,7 +217,7 @@ input[type='checkbox'] + label, input[type='radio'] + label
 {
     .card, .flexbox > div
     {    
-        /*width: calc(50% - 0.5rem); /* When screen is larger than mobile */
+        width: calc(50% - 0.5rem); /* When screen is larger than mobile */
     }
 }
     .card > .header
@@ -237,6 +237,7 @@ input[type='checkbox'] + label, input[type='radio'] + label
 
     .card table
     {
+        display: table;
         margin-top: -1rem;
         margin-bottom: -1rem;
     }
