@@ -27,7 +27,7 @@
     --color-orange-light: rgb(215, 160, 65);
     --color-white: rgb(248, 248, 248);
 
-    --color-border: #e1e1e1;
+    --color-border: #dddddd;
     --color-border-dark: #c5c5c5;
 }
 
@@ -179,6 +179,9 @@ input[type='checkbox'] + label, input[type='radio'] + label
     margin-left: 1rem;
 }
 
+code {
+    background-color: var(--color-border);
+}
 
 
 /* Custom components */
@@ -427,5 +430,5 @@ button.randers:hover, input[type='submit'].randers:hover
     color: var(--color-text);
 }
 .darkmode code, .darkmode .tag {
-    background-color: var(--color-border-dark);
+    background-color: var(--color-border);
 }
