@@ -21,6 +21,7 @@
 {
     --randers-color-: #2f469c;
     --randers-color-dark: #243576;
+    --randers-color-semilight: #5265a8;
     --randers-color-light: #6f7eb4;
 }
 .darkmode, .darkmode *
@@ -51,5 +52,5 @@ button, input[type='submit']
     }
     button:hover, input[type='submit']:hover
     {
-        background-color: var(--randers-color-light);
+        background-color: var(--randers-color-semilight);
     }

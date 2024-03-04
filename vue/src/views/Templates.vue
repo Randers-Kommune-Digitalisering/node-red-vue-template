@@ -267,6 +267,26 @@
     </Content>
 
 
+    <!-- Buttons  -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Knapper</template>
+
+        <span class="paragraph">
+            Knapper indsættes med <code>&lt;button&gt;</code>-tags, eller alternativt som et <code>&lt;input&gt;</code>-tag med type <code>submit</code> i en <code>form</code>. Knapper kan farves med predefinerede farveklasser.
+        </span>
+        
+        <button >Almindelig knap</button>
+        <button class="blue">Blå knap</button>
+        <button class="green">Grøn knap</button>
+        <button class="red">Rød knap</button>
+        <button class="orange">Orange knap</button>
+
+    </Content>
+
+
     <!-- Tags -->
     <Content>
         <template #icon>
@@ -275,7 +295,7 @@
         <template #heading>Tags</template>
 
         <span class="paragraph">
-            Info tags indsættes <code>&lt;span&gt;</code>-elementer med klassen <code>tag</code>. Tags kan farves med predefinerede farveklasser.
+            Info tags indsættes som <code>&lt;span&gt;</code>-elementer med klassen <code>tag</code>. Tags kan farves med predefinerede farveklasser.
         </span>
         
         <span class="tag">Almindeligt tag</span>

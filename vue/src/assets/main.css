@@ -18,9 +18,13 @@
     --color-text-dark: #3c4349;
 
     --color-green: rgb(35, 176, 106);
+    --color-green-light: rgb(99, 181, 140);
     --color-red: rgb(179, 38, 38);
+    --color-red-light: rgb(187, 73, 73);
     --color-blue: rgb(27, 153, 207);
+    --color-blue-light: rgb(84, 170, 206);
     --color-orange: rgb(208, 140, 21);
+    --color-orange-light: rgb(215, 160, 65);
     --color-white: rgb(248, 248, 248);
 
     --color-border: #e1e1e1;
@@ -63,6 +67,11 @@ a
 input, a, button
 {
     transition: 120ms ease-in-out;
+}
+
+button + button
+{
+    margin-left: 0.5rem;
 }
 
 h2 {
@@ -208,7 +217,7 @@ input[type='checkbox'] + label, input[type='radio'] + label
 {
     .card, .flexbox > div
     {    
-        width: calc(50% - 0.5rem); /* When screen is larger than mobile */
+        /*width: calc(50% - 0.5rem); /* When screen is larger than mobile */
     }
 }
     .card > .header
@@ -350,12 +359,18 @@ span.red
 button.red, input[type='submit'].red, .message.red
 { background-color: var(--color-red); }
 
+button.red:hover, input[type='submit'].red:hover
+{ background-color: var(--color-red-light); }
+
 span.green
 { color: var(--color-green); }
 .card.green, .tag.green
 { border-color: var(--color-green); }
 button.green, input[type='submit'].green, .message.green
 { background-color: var(--color-green); }
+
+button.green:hover, input[type='submit'].green:hover
+{ background-color: var(--color-green-light); }
 
 span.blue
 { color: var(--color-blue); }
@@ -364,6 +379,9 @@ span.blue
 button.blue, input[type='submit'].blue, .message.blue
 { background-color: var(--color-blue); }
 
+button.blue:hover, input[type='submit'].blue:hover
+{ background-color: var(--color-blue-light); }
+
 span.orange
 { color: var(--color-orange); }
 .card.orange, .tag.orange
@@ -371,12 +389,18 @@ span.orange
 button.orange, input[type='submit'].orange, .message.orange
 { background-color: var(--color-orange); }
 
+button.orange:hover, input[type='submit'].orange:hover
+{ background-color: var(--color-orange-light); }
+
 span.randers
 { color: var(--randers-color-); }
 .card.randers, .tag.randers
 { border-color: var(--randers-color-); }
 button.randers, input[type='submit'].randers, .message.randers
 { background-color: var(--randers-color-); }
+
+button.randers:hover, input[type='submit'].randers:hover
+{ background-color: var(--color-randers-semilight); }
 
 .message.red, .message.green, .message.blue, .message.orange, .message.randers
 { color: var(--color-white); }
