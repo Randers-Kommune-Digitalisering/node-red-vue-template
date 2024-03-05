@@ -46,6 +46,16 @@
             element.remove();
     }
 
+    // Event for setting header alert
+
+    const emit = defineEmits(['onHeaderAlert'])
+ 
+    const setHeaderAlert = (alert) => {
+        emit('onHeaderAlert', "UI Templates", alert)
+    }
+    
+    const newHeaderAlert = ref("")
+
 </script>
 
 <template>
@@ -257,6 +267,26 @@
     </Content>
 
 
+    <!-- Buttons  -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Knapper</template>
+
+        <span class="paragraph">
+            Knapper indsættes med <code>&lt;button&gt;</code>-tags, eller alternativt som et <code>&lt;input&gt;</code>-tag med type <code>submit</code> i en <code>form</code>. Knapper kan farves med predefinerede farveklasser.
+        </span>
+        
+        <button >Almindelig knap</button>
+        <button class="blue">Blå knap</button>
+        <button class="green">Grøn knap</button>
+        <button class="red">Rød knap</button>
+        <button class="orange">Orange knap</button>
+
+    </Content>
+
+
     <!-- Tags -->
     <Content>
         <template #icon>
@@ -265,7 +295,7 @@
         <template #heading>Tags</template>
 
         <span class="paragraph">
-            Info tags indsættes <code>&lt;span&gt;</code>-elementer med klassen <code>tag</code>. Tags kan farves med predefinerede farveklasser.
+            Info tags indsættes som <code>&lt;span&gt;</code>-elementer med klassen <code>tag</code>. Tags kan farves med predefinerede farveklasser.
         </span>
         
         <span class="tag">Almindeligt tag</span>
@@ -371,6 +401,33 @@
                 <router-link to="">&gt;</router-link>
             </div>
         </div>
+        
+    </Content>
+
+
+    <!-- Milligram -->
+    <Content>
+        <template #icon>
+
+        </template>
+        <template #heading>Header underretninger</template>
+
+        <span class="paragraph">
+            Tryk på knappen for at sætte en header underretning for menupunktet 'UI Templates'.
+        </span>
+
+        <form @submit.prevent="setHeaderAlert(newHeaderAlert)">
+            <fieldset>
+                <div class="flexbox">
+                    <div>
+                        <label for="newHeaderAlertTextbox" class="capitalize">Underretning</label>
+                        <input type="text" placeholder="Skriv en underretning, f.eks. et tal .." id="newHeaderAlertTextbox" v-model="newHeaderAlert">
+                    </div>
+                </div>
+
+                <input type="submit" value="Tilføj">
+            </fieldset>
+        </form>
         
     </Content>
 

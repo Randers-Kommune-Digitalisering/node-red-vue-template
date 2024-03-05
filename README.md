@@ -62,8 +62,8 @@ Det er muligt at merge et repository som er baseret på det oprindelige [Node-RE
 
 > git remote add template https://github.com/Randers-Kommune-Digitalisering/node-red-vue-template
 >
->git fetch --all
+> git fetch --all
 >
->git merge template/main --allow-unrelated-histories
+> git merge template/main --allow-unrelated-histories --squash
 
 Vær opmærksom på eventuelle merge konflikter som skal løses manuelt.
